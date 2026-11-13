@@ -19,10 +19,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   if (!isLocale(locale)) notFound();
   setRequestLocale(locale);
   return (
-    <>
+    <div className="re-home">
       <SiteHeader locale={locale} />
       <Homepage locale={locale} />
       <SiteFooter locale={locale} />
-    </>
+    </div>
   );
 }

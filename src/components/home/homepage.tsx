@@ -9,7 +9,7 @@ import { HomeCta } from './home-cta';
 /** Composition only. Home sections are isolated, editable components. */
 export function Homepage({ locale }: { locale: Locale }) {
   return (
-    <main className="re-home">
+    <main className="re-main">
       <HomeHero locale={locale} />
       <AboutPreview locale={locale} />
       <ServicesShowcase locale={locale} />
