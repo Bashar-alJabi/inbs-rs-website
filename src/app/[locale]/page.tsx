@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ThemeToggle } from '@/components/shared/theme-toggle';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { isLocale, alternateLocale } from '@/lib/site';
@@ -16,6 +17,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <main className="setup-shell">
       <div className="setup-panel">
         <Image src="/brand/inbs-logo.png" alt="INBS" width={152} height={76} priority />
+        <ThemeToggle label={locale === "ar" ? "تبديل الوضع الفاتح والداكن" : "Toggle light and dark mode"} />
         <p className="setup-eyebrow">INBS · REAL ESTATE</p>
         <h1>{t('name')}</h1>
         <p>{t('description')}</p>
