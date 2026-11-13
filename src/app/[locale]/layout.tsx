@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import { isLocale, locales } from '@/lib/site';
 
 export function generateStaticParams() {
@@ -16,6 +17,8 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
 
+  // Supply the locale explicitly so next-intl does not resolve it from request headers.
+  setRequestLocale(locale);
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
