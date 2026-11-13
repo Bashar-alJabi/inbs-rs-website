@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, ArrowUpRight, Instagram, Linkedin, MapPin, Menu, MoveUpRight } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, MapPin, Menu, MoveUpRight } from 'lucide-react';
 import { ThemeToggle } from '@/components/shared/theme-toggle';
 import { Reveal } from '@/components/shared/reveal';
 import { companyContact, socialLinks } from '@/content/contact';
@@ -251,8 +251,8 @@ export function HomePage({ locale }: { locale: Locale }) {
           <div className="re-footer-bottom">
             <span>© {new Date().getFullYear()} INBS REAL ESTATE. {t.rights}</span>
             <div className="re-footer-social">
-              {linkedIn && <a href={linkedIn.href} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={19} /></a>}
-              {instagram && <a href={instagram.href} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={19} /></a>}
+              {linkedIn && <a href={linkedIn.href} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>}
+              {instagram && <a href={instagram.href} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span aria-hidden="true">ig</span></a>}
               <a href="https://inbs-website.vercel.app/" target="_blank" rel="noopener noreferrer">{t.parent}<MoveUpRight size={14} aria-hidden="true" /></a>
             </div>
             <a href="#top" className="re-to-top">{t.backTop}<ArrowUpRight size={16} aria-hidden="true" /></a>
