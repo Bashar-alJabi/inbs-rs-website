@@ -4,15 +4,7 @@ import { Homepage } from '@/components/home/homepage';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { isLocale } from '@/lib/site';
-import '@/styles/home-base.css';
-import '@/styles/home-header.css';
-import '@/styles/home-hero.css';
-import '@/styles/home-about.css';
-import '@/styles/home-services.css';
-import '@/styles/home-journey.css';
-import '@/styles/home-statement.css';
-import '@/styles/home-cta.css';
-import '@/styles/home-footer.css';
+import '@/styles/home.css';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
