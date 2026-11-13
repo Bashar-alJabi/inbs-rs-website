@@ -15,6 +15,8 @@
   --color-surface: #f4f7f9;
   --color-panel: #ffffff;
   --color-muted: #60758a;
+  --color-link: #07539a;
+  --color-accent-text: #07539a;
   --color-border: #dce6ef;
   --radius-button: 7px;
   --radius-control: 9px;
@@ -31,6 +33,10 @@
     --color-surface: #091c2e;
     --color-panel: #102c44;
     --color-muted: #a8bdce;
+  --color-link: #b8e4ff;
+  --color-accent-text: #b8e4ff;
+    --color-link: #b8e4ff;
+    --color-accent-text: #b8e4ff;
     --color-border: #284760;
     color-scheme: dark;
   }
@@ -66,12 +72,12 @@ a { color: inherit; }
 
 .setup-shell { flex: 1; padding: 32px; display: grid; place-items: center; }
 .setup-panel { width: min(100%, 680px); padding: clamp(24px, 5vw, 64px); background: var(--color-panel); border: 1px solid var(--color-border); border-radius: 20px; }
-.setup-eyebrow { color: var(--brand-light); font-weight: 700; letter-spacing: .12em; }
+.setup-eyebrow { color: var(--color-accent-text); font-weight: 700; letter-spacing: .12em; }
 .setup-panel h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.15; margin: 16px 0; }
 .setup-panel h2 { font-size: 21px; margin: 36px 0 12px; }
 .setup-panel p { line-height: 1.75; }
 .setup-links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 30px; }
-.setup-links a { color: var(--brand-light); text-underline-offset: 4px; }
+.setup-links a { color: var(--color-link); text-underline-offset: 4px; }
 
 @media (max-width: 760px) {
   :root { --inbs-inner-hero-title-size: clamp(40px, 8.4vw, 58px); --inbs-inner-hero-lead-size: 16px; --inbs-inner-hero-kicker-size: 13px; }
