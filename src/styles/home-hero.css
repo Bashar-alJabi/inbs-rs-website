@@ -1,0 +1,134 @@
+/* INBS Real Estate / Home / hero. */
+.re-hero {position:relative;isolation:isolate;background:#17435c;color:white;min-height:760px;height:min(950px,100svh);overflow:hidden}
+
+.re-hero-photo,.re-hero-shade {position:absolute;inset:0;z-index:-3}
+
+.re-hero-photo img {object-fit:cover;object-position:58% center;transform:scale(1.035);animation:re-image-reveal 1.7s cubic-bezier(.18,.7,.25,1) both}
+
+.re-hero-shade {z-index:-2;background:linear-gradient(90deg,#031a30e8 0%,#082741bc 42%,#06263d53 80%,#0419295a 100%),linear-gradient(0deg,#031a2cce 0%,transparent 30%,#061d2f71 100%)}
+
+html[dir='rtl'] .re-hero-shade {background:linear-gradient(270deg,#031a30ed 0%,#082741be 43%,#06263d59 80%,#0419295a 100%),linear-gradient(0deg,#031a2cce,transparent 30%,#061d2f71)}
+
+.re-hero-outline {position:absolute;inset-inline-end:-160px;top:18%;width:min(55vw,740px);height:65%;z-index:-1;opacity:.6;pointer-events:none}
+
+.re-hero-outline span {position:absolute;inset:0;border:1px solid #ffffff4a;border-radius:50%}
+
+.re-hero-outline span:nth-child(2){inset:10% 8%;border-color:#ffffff33}
+
+.re-hero-outline span:nth-child(3){inset:20% 16%;border-color:#ffffff2b}
+
+.re-hero-inner {width:min(100% - 112px,1420px);height:100%;margin-inline:auto;display:flex;flex-direction:column;justify-content:space-between;padding-top:137px}
+
+.re-hero-topline {display:flex;align-items:center;gap:16px;letter-spacing:.19em;font-size:10px;font-weight:750;color:#e4f2f9}
+
+.re-accent-line {display:block;width:35px;height:1px;background:#cce3f2}
+
+.re-hero-main {padding:40px 0 58px;position:relative;max-width:1160px}
+
+.re-hero-eyebrow {color:#b8dcef;margin-bottom:25px}
+
+.re-hero h1 {font-size:clamp(64px,7.25vw,116px);font-weight:560;line-height:1.045;letter-spacing:-.075em;max-width:1070px}
+
+.re-hero h1 span,.re-hero h1 em {display:block}
+
+.re-hero h1 em {font-weight:450;font-style:italic;color:#badcf3}
+
+.re-hero-description {margin-top:32px;display:flex;align-items:end;gap:clamp(40px,5.4vw,105px)}
+
+.re-hero-description p {max-width:390px;font-size:clamp(14px,1.2vw,17px);line-height:1.85;color:#e3eaf0}
+
+.re-hero-link {display:inline-flex;align-items:center;gap:22px;white-space:nowrap;font-size:13px;font-weight:700}
+
+.re-hero-link span {width:54px;height:54px;display:grid;place-items:center;border:1px solid #ffffffaf;border-radius:50%;transition:background .22s,color .22s,transform .22s}
+
+.re-hero-link:hover span {background:#fff;color:#0a3047;transform:rotate(45deg)}
+
+.re-hero-bottom {border-top:1px solid #ffffff57;padding:21px 0 25px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#e2edf4;font-size:10px;font-weight:700;letter-spacing:.15em}
+
+.re-scroll-prompt {display:inline-flex;align-items:center;gap:15px}
+
+.re-scroll-circle {height:35px;width:35px;border:1px solid #ffffff70;border-radius:50%;display:grid;place-items:center}
+
+.re-hero-vertical {position:absolute;inset-inline-end:27px;top:50%;writing-mode:vertical-rl;letter-spacing:.22em;font-size:10px;font-weight:650;color:#ffffffad;transform:translateY(-50%)}
+
+@keyframes re-image-reveal {from{opacity:.35;transform:scale(1.09)}to{opacity:1;transform:scale(1.035)}}
+
+html[dir='rtl'] .re-overline,html[dir='rtl'] .re-hero-topline,html[dir='rtl'] .re-hero-bottom,html[dir='rtl'] .re-footer-brand p,html[dir='rtl'] .re-footer-bottom {letter-spacing:0}
+
+html[dir='rtl'] .re-hero-outline {transform:scaleX(-1)}
+
+@media(max-width:980px) {
+.re-hero {min-height:700px;height:850px;max-height:100svh}
+}
+
+@media(max-width:980px) {
+.re-hero h1 {font-size:clamp(59px,8.6vw,92px)}
+}
+
+@media(max-width:650px) {
+.re-hero {height:auto;min-height:740px;min-height:100svh;max-height:none}
+}
+
+@media(max-width:650px) {
+.re-hero-photo img {object-position:63% center}
+}
+
+@media(max-width:650px) {
+.re-hero-shade {background:linear-gradient(90deg,#04192fe9,#0b2d47ae 70%,#031c31a1),linear-gradient(0deg,#041a2ee0,transparent 50%)}
+}
+
+@media(max-width:650px) {
+.re-hero-inner {padding-top:101px;min-height:740px;min-height:100svh}
+}
+
+@media(max-width:650px) {
+.re-hero-topline {font-size:9px}
+}
+
+@media(max-width:650px) {
+.re-hero-main {padding:90px 0 55px}
+}
+
+@media(max-width:650px) {
+.re-hero-eyebrow {font-size:9px;letter-spacing:.14em;margin-bottom:22px}
+}
+
+@media(max-width:650px) {
+.re-hero h1 {font-size:clamp(53px,12vw,78px);letter-spacing:-.06em}
+}
+
+@media(max-width:650px) {
+.re-hero-description {display:block;margin-top:22px}
+}
+
+@media(max-width:650px) {
+.re-hero-description p {font-size:14px;max-width:340px}
+}
+
+@media(max-width:650px) {
+.re-hero-link {margin-top:25px;gap:18px}
+}
+
+@media(max-width:650px) {
+.re-hero-link span {width:44px;height:44px}
+}
+
+@media(max-width:650px) {
+.re-hero-bottom {padding:17px 0 21px}
+}
+
+@media(max-width:650px) {
+.re-hero-bottom>span:nth-child(2) {display:none}
+}
+
+@media(max-width:650px) {
+.re-hero-vertical {display:none}
+}
+
+@media(prefers-reduced-motion:reduce) {
+.re-hero-photo img{animation:none;transform:none}
+}
+
+@media(prefers-reduced-motion:reduce) {
+.re-offering,.re-offering-arrow,.re-hero-link span,.re-contact-primary{transition:none}
+}

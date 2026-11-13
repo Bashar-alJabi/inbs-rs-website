@@ -1,0 +1,92 @@
+/* INBS Real Estate / Home / header. */
+.re-header {position:absolute;inset-block-start:0;inset-inline:0;z-index:10;color:white}
+
+.re-header-inner {width:min(100% - 112px, 1540px);height:105px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;border-bottom:1px solid #ffffff40}
+
+.re-logo {display:inline-flex;align-items:center;gap:15px;min-width:max-content}
+
+.re-logo img {width:116px;height:59px;object-fit:contain;filter:brightness(0) invert(1)}
+
+.re-logo-divider {height:30px;width:1px;background:#ffffff65}
+
+.re-logo-descriptor {font-size:9px;line-height:1.4;letter-spacing:.2em;font-weight:700}
+
+.re-primary-nav {display:flex;gap:clamp(20px,2.7vw,49px);align-items:center}
+
+.re-primary-nav a {font-size:12px;font-weight:650;color:#ffffffde;transition:color .2s}
+
+.re-primary-nav a:hover {color:#9cdbff}
+
+.re-header-actions {display:flex;gap:13px;align-items:center}
+
+.re-header .re-lang {font-size:12px;font-weight:750;letter-spacing:.02em;padding:12px}
+
+.re-header .theme-toggle {border:1px solid #ffffff54;background:#ffffff13;color:white;min-height:40px;min-width:40px}
+
+.re-header-contact {display:inline-flex;gap:18px;align-items:center;padding:14px 18px;border:1px solid #ffffffae;border-radius:var(--radius-button);font-weight:700;font-size:12px;transition:background .2s,color .2s}
+
+.re-header-contact:hover {background:white;color:#07283f}
+
+.re-mobile-nav {display:none;position:relative}
+
+.re-mobile-nav summary {cursor:pointer;list-style:none;display:grid;place-items:center;min-width:44px;min-height:44px}
+
+.re-mobile-nav summary::-webkit-details-marker {display:none}
+
+.re-mobile-nav nav {position:absolute;inset-inline-end:0;top:calc(100% + 12px);min-width:235px;padding:13px;background:#0a3049;border:1px solid #ffffff35;box-shadow:0 25px 60px #0004;display:grid}
+
+.re-mobile-nav nav a {padding:14px 12px;font-size:14px;border-bottom:1px solid #ffffff22}
+
+.re-mobile-nav nav a:last-child {border:0}
+
+@media(max-width:1250px) {
+.re-primary-nav {gap:20px}
+}
+
+@media(max-width:1250px) {
+.re-header-inner,.re-hero-inner {width:min(100% - 70px,1420px)}
+}
+
+@media(max-width:980px) {
+.re-primary-nav,.re-header-contact {display:none}
+}
+
+@media(max-width:980px) {
+.re-mobile-nav {display:block}
+}
+
+@media(max-width:650px) {
+.re-shell,.re-header-inner,.re-hero-inner {width:calc(100% - 38px)}
+}
+
+@media(max-width:650px) {
+.re-header-inner {height:77px;gap:10px}
+}
+
+@media(max-width:650px) {
+.re-logo {gap:8px}
+}
+
+@media(max-width:650px) {
+.re-logo img {width:88px;height:45px}
+}
+
+@media(max-width:650px) {
+.re-logo-divider {height:24px}
+}
+
+@media(max-width:650px) {
+.re-logo-descriptor {font-size:7px}
+}
+
+@media(max-width:650px) {
+.re-header-actions {gap:3px}
+}
+
+@media(max-width:650px) {
+.re-header .re-lang {padding:10px 7px;font-size:11px}
+}
+
+@media(max-width:650px) {
+.re-header .theme-toggle {min-height:36px;min-width:36px}
+}

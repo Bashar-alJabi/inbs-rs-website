@@ -1,0 +1,33 @@
+/* INBS Real Estate / Home / base. */
+/* INBS Real Estate — editorial homepage. All selectors scoped to .re-home. */
+.re-home { --re-ink:#112b3e; --re-muted:#637584; --re-paper:#f5f4ef; --re-cream:#e9e8e1; --re-line:#d3d7d8; --re-dark:#092438; --re-blue:#296da4; background:var(--re-paper); color:var(--re-ink); overflow:clip; }
+
+html[data-theme='dark'] .re-home { --re-ink:#e9f2f6; --re-muted:#a4b4c1; --re-paper:#0e2332; --re-cream:#162f41; --re-line:#355063; --re-dark:#061928; --re-blue:#91c8ee; }
+
+@media(prefers-color-scheme:dark) {
+html:not([data-theme='light']) .re-home {--re-ink:#e9f2f6;--re-muted:#a4b4c1;--re-paper:#0e2332;--re-cream:#162f41;--re-line:#355063;--re-dark:#061928;--re-blue:#91c8ee}
+}
+
+.re-home a {text-decoration:none}
+
+.re-home button,.re-home a { -webkit-tap-highlight-color:transparent }
+
+.re-home h1,.re-home h2,.re-home h3,.re-home p { margin:0 }
+
+.re-shell {width:min(100% - 112px, 1420px);margin-inline:auto}
+
+.re-overline {font-size:11px;letter-spacing:.2em;font-weight:750;line-height:1.6}
+
+.re-section-number {font-size:13px;letter-spacing:.02em;font-weight:700;white-space:nowrap}
+
+.re-section-number span {font-size:11px;color:var(--re-muted)}
+
+html[dir='rtl'] .re-home h1,html[dir='rtl'] .re-home h2,html[dir='rtl'] .re-home h3 {letter-spacing:0}
+
+@media(max-width:1250px) {
+.re-shell {width:min(100% - 70px,1420px)}
+}
+
+@media(max-width:650px) {
+.re-overline {font-size:10px}
+}
