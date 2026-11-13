@@ -23,8 +23,8 @@ body {
   background: var(--color-surface);
   font-family: var(--font-en);
 }
-.locale-app[lang="ar"] { font-family: var(--font-ar); }
-.locale-app[lang="en"] { font-family: var(--font-en); }
+html[lang="ar"] .locale-app { font-family: var(--font-ar); }
+html[lang="en"] .locale-app { font-family: var(--font-en); }
 a { color: inherit; }
 :where(a, button, input, textarea, select):focus-visible {
   outline: 3px solid var(--brand-light);
