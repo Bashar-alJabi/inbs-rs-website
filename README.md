@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# INBS Real Estate
 
-## Getting Started
+Independent bilingual real estate website for INBS, built with Next.js App Router, React, TypeScript, Tailwind CSS and next-intl.
 
-First, run the development server:
+## Development
+
+Requires a supported Node.js version compatible with the project's Next.js release.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000/en for English or http://localhost:3000/ar for Arabic. The root path redirects to English.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## Learn More
+## Branches
 
-To learn more about Next.js, take a look at the following resources:
+- `main`: approved main branch
+- `redesign`: integration branch
+- `feature/*`: development and local review
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Only merge reviewed features after the required checks.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Current scope
 
-## Deploy on Vercel
+The foundation contains the two-language routing, initial brand tokens and contact data. Page design and content are not yet approved. Property listings are intentionally excluded until real listings are available.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Do not add third-party packages or introduce forms, content-management systems or listing infrastructure without an actual project requirement.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The default create-next-app graphics and favicon were removed. An official brand favicon can be added when the approved asset is available.
