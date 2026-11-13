@@ -68,7 +68,7 @@ export function HomeHero({ locale }: { locale: Locale }) {
         <div className="re-hero-bottom">
           <div className="re-hero-controls" aria-label={locale === 'ar' ? 'التحكم بالشرائح' : 'Slide controls'}>
             <span className="re-hero-count" dir="ltr">{String(active + 1).padStart(2, '0')} <i>/</i> {String(slides.length).padStart(2, '0')}</span>
-            <div className="re-hero-progress" aria-hidden="true">
+            <div className="re-hero-progress" role="group" aria-label={locale === "ar" ? "اختيار الشريحة" : "Choose slide"}>
               {slides.map((item, index) => <button key={item.image} type="button" className={active === index ? 'is-current' : ''} onClick={() => setActive(index)} aria-label={locale === 'ar' ? `الشريحة ${index+1}` : `Slide ${index+1}`}/>)}
             </div>
             <button type="button" className="re-hero-control" onClick={() => move(-1)} aria-label={locale === 'ar' ? 'السابق' : 'Previous'}>

@@ -21,7 +21,7 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /id="re-expertise-title"/);
   assert.match(html, /id="re-journey-title"/);
   assert.match(html, /id="re-contact-title"/);
-  assert.match(html, /architecture\.webp/);
+  assert.match(html, /dubai-aerial\.webp/);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/);
   assert.match(html, /\/brand\/inbs-logo\.png/);
   assert.match(response.headers.get('x-content-type-options') || '', /nosniff/);
@@ -47,11 +47,13 @@ for (const name of ['hero-01', 'hero-02', 'hero-03', 'story-04', 'story-05',
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
   assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
 }
-const architecture = await expectStatus('/images/home/architecture.webp', 200);
-assert.match(architecture.headers.get('content-type') || '', /image\/webp/i);
-const architectureBytes = Buffer.from(await architecture.arrayBuffer());
-assert.equal(architectureBytes.toString('ascii', 0, 4), 'RIFF');
-assert.equal(architectureBytes.toString('ascii', 8, 12), 'WEBP');
+for (const image of ['dubai-aerial', 'dubai-skyline', 'dubai-waterfront']) {
+  const response = await expectStatus(`/images/home/${image}.webp`, 200);
+  assert.match(response.headers.get('content-type') || '', /image\/webp/i);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
+  assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
+}
 const brand = await expectStatus('/brand/inbs-logo.png', 200);
 assert.match(brand.headers.get('content-type') || '', /image\/png/i);
 console.log('All foundation smoke checks passed');
