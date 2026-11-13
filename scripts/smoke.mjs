@@ -47,7 +47,7 @@ for (const name of ['hero-01', 'hero-02', 'hero-03', 'story-04', 'story-05',
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
   assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
 }
-for (const image of ['dubai-aerial', 'dubai-skyline', 'dubai-waterfront']) {
+for (const image of ['pexels-villa', 'pexels-dubai', 'pexels-interior', 'pexels-residence']) {
   const response = await expectStatus(`/images/home/${image}.webp`, 200);
   assert.match(response.headers.get('content-type') || '', /image\/webp/i);
   const bytes = Buffer.from(await response.arrayBuffer());

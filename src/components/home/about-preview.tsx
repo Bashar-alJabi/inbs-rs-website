@@ -16,8 +16,8 @@ export function AboutPreview({ locale }: { locale: Locale }) {
         </Reveal>
         <div className="re-intro-art">
           <Reveal className="re-intro-image">
-            <Image src="/images/home/dubai-waterfront.webp" alt={locale === 'ar' ? 'الأفق العمراني لدبي والواجهة المائية' : 'Dubai skyline reflected in the waterfront'} fill sizes="(max-width: 900px) 90vw, 48vw" />
-            <span className="re-intro-image-label">DUBAI / PERSPECTIVE 01</span>
+            <Image src="/images/home/pexels-villa.webp" alt={locale === 'ar' ? 'فيلا عصرية مع مسبح - صورة توضيحية' : 'Contemporary villa with an infinity pool, illustrative architecture'} fill sizes="(max-width: 900px) 90vw, 48vw" />
+            <span className="re-intro-image-label">ARCHITECTURAL PERSPECTIVE</span>
           </Reveal>
           <div className="re-intro-orbit" aria-hidden="true"><span/><span/><span/></div>
         </div>

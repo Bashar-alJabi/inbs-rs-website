@@ -9,9 +9,9 @@ import type { Locale } from '@/lib/site';
 import { homeContent } from '@/content/home';
 
 const photos = [
-  '/images/home/dubai-aerial.webp',
-  '/images/home/dubai-skyline.webp',
-  '/images/home/dubai-waterfront.webp',
+  '/images/home/pexels-dubai.webp',
+  '/images/home/pexels-residence.webp',
+  '/images/home/pexels-interior.webp',
 ] as const;
 const icons = [Building2, Handshake, ScrollText] as const;
 
