@@ -1,0 +1,57 @@
+name: Import approved Pexels photos (one-time)
+
+on:
+  push:
+    branches: [feature/home-page]
+    paths: ['.github/workflows/import-pexels.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/home-page
+          persist-credentials: true
+      - name: Install image converter
+        run: |
+          python3 -m venv /tmp/inbs-image-env
+          /tmp/inbs-image-env/bin/pip install --disable-pip-version-check -q pillow
+      - name: Download and optimize verified Pexels sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/images/home
+          curl -fLsS --retry 3 --connect-timeout 20 --max-time 120 'https://images.pexels.com/photos/31817156/pexels-photo-31817156.jpeg?auto=compress&cs=tinysrgb&w=1800' -o /tmp/inbs-villa.jpg
+          curl -fLsS --retry 3 --connect-timeout 20 --max-time 120 'https://images.pexels.com/photos/28469864/pexels-photo-28469864.jpeg?auto=compress&cs=tinysrgb&w=1800' -o /tmp/inbs-dubai.jpg
+          curl -fLsS --retry 3 --connect-timeout 20 --max-time 120 'https://images.pexels.com/photos/7031403/pexels-photo-7031403.jpeg?auto=compress&cs=tinysrgb&w=1600' -o /tmp/inbs-interior.jpg
+          curl -fLsS --retry 3 --connect-timeout 20 --max-time 120 'https://images.pexels.com/photos/30781823/pexels-photo-30781823.jpeg?auto=compress&cs=tinysrgb&w=1600' -o /tmp/inbs-residence.jpg
+          /tmp/inbs-image-env/bin/python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          for source,name in [
+            ('villa','pexels-villa.webp'),
+            ('dubai','pexels-dubai.webp'),
+            ('interior','pexels-interior.webp'),
+            ('residence','pexels-residence.webp'),
+          ]:
+              with Image.open('/tmp/inbs-'+source+'.jpg') as img:
+                  img.convert('RGB').save(Path('public/images/home')/name,format='WEBP',quality=80,method=6)
+              b=(Path('public/images/home')/name).read_bytes()
+              assert b[:4]==b'RIFF' and b[8:12]==b'WEBP', name
+              print(name,len(b))
+          PY
+      - name: Commit assets to Home feature branch
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/images/home/pexels-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(home): import optimized Pexels editorial photography'
+            git push origin HEAD:feature/home-page
+          fi
