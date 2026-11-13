@@ -24,7 +24,7 @@
 .re-inline-link:hover svg {transform:translate(3px,-3px)}
 
 /* 02 — SITE HEADER: transparent, architectural, consistent with parent INBS */
-.re-header {position:absolute;inset-block-start:0;inset-inline:0;z-index:40;color:#fff}
+.re-header {position:fixed;inset-block-start:0;inset-inline:0;z-index:70;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
 .re-header-inner {width:min(100% - 104px,1420px);height:92px;margin-inline:auto;display:flex;align-items:center;gap:36px;border-bottom:1px solid #ffffff55}
 .re-logo {display:flex;align-items:center;gap:13px;margin-inline-end:auto;min-width:max-content}
 .re-logo img {width:112px;height:60px;object-fit:contain;filter:brightness(0) invert(1)}
@@ -40,12 +40,32 @@
 .re-header .theme-toggle:hover {background:#ffffff2a}
 .re-header-contact {display:inline-flex;align-items:center;gap:20px;border:1px solid #ffffffc5;border-radius:var(--radius-button,7px);padding:14px 18px;font-size:12px;font-weight:750;white-space:nowrap;transition:background .25s,color .25s}
 .re-header-contact:hover {background:#fff;color:#103e60}
-.re-mobile-nav {display:none;position:relative}
-.re-mobile-nav summary {width:44px;height:44px;display:grid;place-items:center;list-style:none;cursor:pointer}
-.re-mobile-nav summary::-webkit-details-marker {display:none}
-.re-mobile-nav nav {position:absolute;top:calc(100% + 10px);inset-inline-end:0;min-width:245px;display:flex;flex-direction:column;background:#082d4b;border:1px solid #a7c8db65;padding:12px;box-shadow:0 22px 50px #001c39a0}
-.re-mobile-nav nav a {font-size:14px;padding:15px;border-bottom:1px solid #ffffff25}
-.re-mobile-nav nav a:last-child {border:0}
+.re-mobile-trigger {display:none;width:44px;height:44px;border:0;background:transparent;color:inherit;cursor:pointer;place-items:center}
+
+
+
+
+
+
+
+/* Sticky header and accessible navigation drawer */
+.re-header.is-solid {background:var(--re-panel);color:var(--re-ink);box-shadow:0 8px 30px #001c3723}
+.re-header.is-solid .re-header-inner {border-bottom-color:transparent}
+.re-header.is-solid .re-logo img {filter:none}
+.re-header.is-solid .re-logo-divider {background:var(--re-rule)}
+.re-header.is-solid .re-primary-nav a {color:var(--re-ink)}
+.re-header.is-solid .re-primary-nav a:after {background:var(--re-accent)}
+.re-header.is-solid .re-header-contact {border-color:var(--re-accent);color:var(--re-ink)}
+.re-header.is-solid .re-header-contact:hover {color:#fff;background:var(--re-navy)}
+.re-header.is-solid .theme-toggle {border-color:var(--re-rule);background:var(--re-surface);color:var(--re-ink)}
+.re-drawer-backdrop {position:fixed;inset:0;border:0;background:#041527b5;z-index:80;cursor:pointer}
+.re-drawer {position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(410px,94vw);z-index:81;background:#072c49;color:#edf8ff;display:flex;flex-direction:column;padding:26px clamp(24px,4vw,43px);box-shadow:-20px 0 70px #0012258a}
+.re-drawer-top {display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #ffffff60;padding-bottom:32px;margin-bottom:19px;color:#bdddf1;font-size:10px;font-weight:750;letter-spacing:.18em}
+.re-drawer-top button {border:0;background:transparent;color:#fff;cursor:pointer;min-width:44px;min-height:44px}
+.re-drawer>a {display:flex;align-items:center;gap:15px;border-bottom:1px solid #ffffff2b;padding:23px 0;font-size:clamp(22px,5vw,30px);font-weight:500}
+.re-drawer>a>span {font-size:11px;color:#90c6e8}
+.re-drawer>a>svg {margin-inline-start:auto}
+.re-drawer-signature {margin-top:auto!important;padding-top:50px;font-size:10px;letter-spacing:.15em;color:#bbd7e8}
 
 /* 03 — HERO: cinematic, but preserves parent INBS controls and motion approach */
 .re-hero {position:relative;height:min(920px,100svh);min-height:730px;background:#0a304e;color:#fff;isolation:isolate;overflow:hidden}
@@ -235,7 +255,7 @@ html[data-theme=dark] .re-home {
 }
 @media(max-width:1000px){
  .re-primary-nav,.re-header-contact {display:none}
- .re-mobile-nav {display:block}
+ .re-mobile-trigger {display:grid}
  .re-hero h1 {font-size:clamp(64px,8vw,91px)}
  .re-hero-side-note {display:none}
  .re-intro-inner {grid-template-columns:1fr 1fr;column-gap:35px}
