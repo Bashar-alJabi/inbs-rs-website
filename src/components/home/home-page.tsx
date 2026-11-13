@@ -249,7 +249,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="re-footer-address"><MapPin size={18} aria-hidden="true" /><a href={contact.mapUrl} target="_blank" rel="noopener noreferrer">{contact.address[locale]}</a></div>
           </div>
           <div className="re-footer-bottom">
-            <span>© {new Date().getFullYear()} INBS REAL ESTATE. {t.rights}</span>
+            <span>© INBS REAL ESTATE. {t.rights}</span>
             <div className="re-footer-social">
               {linkedIn && <a href={linkedIn.href} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>}
               {instagram && <a href={instagram.href} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span aria-hidden="true">ig</span></a>}
