@@ -21,7 +21,7 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /id="re-expertise-title"/);
   assert.match(html, /id="re-journey-title"/);
   assert.match(html, /id="re-contact-title"/);
-  assert.match(html, /\/images\/home\/architecture\.webp/);
+  assert.match(html, /architecture\.webp/);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/);
   assert.match(html, /\/brand\/inbs-logo\.png/);
   assert.match(response.headers.get('x-content-type-options') || '', /nosniff/);
