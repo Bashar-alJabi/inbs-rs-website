@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
+/* Shared visual foundation. Page-specific design comes later. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-en: Manrope, Arial, sans-serif;
+  --font-ar: "IBM Plex Sans Arabic", Tahoma, sans-serif;
+  --brand-deep: #06356b;
+  --brand-blue: #126cb5;
+  --brand-light: #79bbef;
+  --color-text: #142a3d;
+  --color-surface: #f4f7f9;
+  --radius-button: 7px;
+  --radius-control: 9px;
+  --inbs-inner-hero-title-size: clamp(48px, 5.4vw, 80px);
+  --inbs-inner-hero-lead-size: clamp(16px, 1.35vw, 20px);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-surface);
+  font-family: var(--font-en);
+}
+html[lang="ar"] body { font-family: var(--font-ar); }
+a { color: inherit; }
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 3px solid var(--brand-light);
+  outline-offset: 4px;
+}
+
+.setup-shell {
+  min-height: 100dvh;
+  padding: 32px;
+  display: grid;
+  place-items: center;
+}
+.setup-panel {
+  width: min(100%, 680px);
+  padding: clamp(24px, 5vw, 64px);
+  background: white;
+  border: 1px solid #dce6ef;
+  border-radius: 20px;
+}
+.setup-eyebrow { color: var(--brand-blue); font-weight: 700; letter-spacing: .12em; }
+.setup-panel h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.15; margin: 16px 0; }
+.setup-panel h2 { font-size: 21px; margin: 36px 0 12px; }
+.setup-panel p { line-height: 1.75; }
+.setup-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 30px; }
+.setup-links a { color: var(--brand-deep); text-underline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
