@@ -1,55 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-/* Shared visual foundation. Page-specific design comes later. */
+/* Central INBS design foundation; page composition remains deliberately undecided. */
 :root {
-  --font-en: Manrope, Arial, sans-serif;
-  --font-ar: "IBM Plex Sans Arabic", Tahoma, sans-serif;
+  --font-en: 'Manrope', Arial, sans-serif;
+  --font-ar: 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+  --font-body: var(--font-en);
   --brand-deep: #06356b;
   --brand-blue: #126cb5;
   --brand-light: #79bbef;
+  --color-primary: #07539a;
+  --color-primary-hover: #1365af;
   --color-text: #142a3d;
   --color-surface: #f4f7f9;
+  --color-panel: #ffffff;
+  --color-muted: #60758a;
+  --color-border: #dce6ef;
   --radius-button: 7px;
   --radius-control: 9px;
+  --font-size-button: 14px;
   --inbs-inner-hero-title-size: clamp(48px, 5.4vw, 80px);
   --inbs-inner-hero-lead-size: clamp(16px, 1.35vw, 20px);
+  --inbs-inner-hero-kicker-size: 14px;
+  --inbs-inner-hero-action-size: 14px;
+  --inbs-inner-hero-action-height: 52px;
 }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']) {
+    --color-text: #e9f4fd;
+    --color-surface: #091c2e;
+    --color-panel: #102c44;
+    --color-muted: #a8bdce;
+    --color-border: #284760;
+    color-scheme: dark;
+  }
+}
+html[data-theme='dark'] {
+  --color-text: #e9f4fd;
+  --color-surface: #091c2e;
+  --color-panel: #102c44;
+  --color-muted: #a8bdce;
+  --color-border: #284760;
+  color-scheme: dark;
+}
+html[data-theme='light'] { color-scheme: light; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  color: var(--color-text);
-  background: var(--color-surface);
-  font-family: var(--font-en);
-}
-html[lang="ar"] .locale-app { font-family: var(--font-ar); }
-html[lang="en"] .locale-app { font-family: var(--font-en); }
+body { margin: 0; background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); }
+html[lang='ar'] { --font-body: var(--font-ar); }
+button, input, textarea, select { font: inherit; }
 a { color: inherit; }
-:where(a, button, input, textarea, select):focus-visible {
+:where(a, button, input, textarea, select, [role='button']):focus-visible {
   outline: 3px solid var(--brand-light);
   outline-offset: 4px;
 }
+.site-shell { max-width: 1280px; padding-inline: clamp(20px, 5vw, 68px); margin-inline: auto; }
+.locale-app { display: flex; flex-direction: column; min-height: 100dvh; }
+.theme-toggle {
+  min-width: 44px; min-height: 44px; border: 1px solid var(--color-border);
+  border-radius: 50%; background: var(--color-panel); color: var(--color-text);
+  display: inline-grid; place-items: center; cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--brand-light); }
 
-.setup-shell {
-  min-height: 100dvh;
-  padding: 32px;
-  display: grid;
-  place-items: center;
-}
-.setup-panel {
-  width: min(100%, 680px);
-  padding: clamp(24px, 5vw, 64px);
-  background: white;
-  border: 1px solid #dce6ef;
-  border-radius: 20px;
-}
-.setup-eyebrow { color: var(--brand-blue); font-weight: 700; letter-spacing: .12em; }
+.setup-shell { flex: 1; padding: 32px; display: grid; place-items: center; }
+.setup-panel { width: min(100%, 680px); padding: clamp(24px, 5vw, 64px); background: var(--color-panel); border: 1px solid var(--color-border); border-radius: 20px; }
+.setup-eyebrow { color: var(--brand-light); font-weight: 700; letter-spacing: .12em; }
 .setup-panel h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.15; margin: 16px 0; }
 .setup-panel h2 { font-size: 21px; margin: 36px 0 12px; }
 .setup-panel p { line-height: 1.75; }
-.setup-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 30px; }
-.setup-links a { color: var(--brand-deep); text-underline-offset: 4px; }
+.setup-links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 30px; }
+.setup-links a { color: var(--brand-light); text-underline-offset: 4px; }
+
+@media (max-width: 760px) {
+  :root { --inbs-inner-hero-title-size: clamp(40px, 8.4vw, 58px); --inbs-inner-hero-lead-size: 16px; --inbs-inner-hero-kicker-size: 13px; }
+  .setup-shell { padding: 16px; }
+}
+@media (max-width: 450px) {
+  :root { --inbs-inner-hero-title-size: clamp(36px, 9vw, 52px); }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;
