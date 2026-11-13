@@ -1,0 +1,10 @@
+{
+  "site": {
+    "name": "INBS Real Estate",
+    "description": "Real estate brokerage, consultation and transaction assistance in Dubai.",
+    "setup": "Project foundation is ready.",
+    "next": "Page design and content will be developed in the next stages.",
+    "parent": "INBS official website",
+    "switchLanguage": "العربية"
+  }
+}
