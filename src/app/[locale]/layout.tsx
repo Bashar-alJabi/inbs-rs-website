@@ -19,12 +19,10 @@ export default async function LocaleLayout({
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <div lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="locale-app">
+        {children}
+      </div>
+    </NextIntlClientProvider>
   );
 }
