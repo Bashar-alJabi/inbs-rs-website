@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { isLocale, locales } from '@/lib/site';
+import '../globals.css';
+
+export const metadata: Metadata = {
+  title: { default: 'INBS Real Estate', template: '%s | INBS Real Estate' },
+  description: 'Real estate brokerage, consultation and transaction assistance in Dubai.',
+};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -17,15 +24,17 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
 
-  // Supply the locale explicitly so next-intl does not resolve it from request headers.
+  // Keep locale-specific routes statically prerenderable.
   setRequestLocale(locale);
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <div lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="locale-app">
-        {children}
-      </div>
-    </NextIntlClientProvider>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <div className="locale-app">{children}</div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
