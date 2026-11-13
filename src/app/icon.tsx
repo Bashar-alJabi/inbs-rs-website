@@ -11,6 +11,8 @@ export default async function Icon() {
   const src = `data:image/png;base64,${logo.toString('base64')}`;
   return new ImageResponse(
     <div style={{ display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
+      {/* next/image is not supported inside ImageResponse; this is the official local mark. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} width={128} height={128} alt="" style={{ objectFit: 'contain' }} />
     </div>,
     size,
