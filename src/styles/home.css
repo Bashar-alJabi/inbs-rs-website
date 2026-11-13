@@ -14,6 +14,7 @@
 .re-home h1,.re-home h2,.re-home h3,.re-home p {margin:0}
 .re-home a {text-decoration:none}
 .re-home button {font-family:inherit}
+.re-home section[id] {scroll-margin-top:92px}
 .re-home :where(button,a):focus-visible {outline:3px solid #a1d6ff;outline-offset:4px}
 .re-shell {width:min(100% - 104px,1320px);margin-inline:auto}
 .re-kicker {font-size:12px;letter-spacing:.16em;font-weight:750;line-height:1.7;color:var(--re-accent)}
