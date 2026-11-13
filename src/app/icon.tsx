@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- ImageResponse requires an ordinary image element. */
 import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
