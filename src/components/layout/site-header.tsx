@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, Menu, Moon, Sun, X, House, Building2, BriefcaseBusiness, Users, Newspaper, UserRoundSearch, Phone, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, Menu, Moon, Sun, X, House, Building2, BriefcaseBusiness, Users, Newspaper, UserRoundSearch, Phone, FileText, type LucideIcon } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import type { Locale } from '@/lib/site';
 import { routes, type PageSlug } from '@/lib/routes';
@@ -20,6 +20,7 @@ const drawerIcons: Record<PageSlug, LucideIcon> = {
   insights: Newspaper,
   careers: UserRoundSearch,
   contact: Phone,
+  legal: FileText,
 };
 export function SiteHeader({locale}:{locale:Locale}){
  const pathname=usePathname();
