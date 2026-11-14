@@ -21,6 +21,7 @@
   --radius-button: 7px;
   --radius-control: 9px;
   --font-size-button: 14px;
+  --inbs-cta-surface: #eaf1f6;
   --inbs-inner-hero-title-size: clamp(48px, 5.4vw, 80px);
   --inbs-inner-hero-lead-size: clamp(16px, 1.35vw, 20px);
   --inbs-inner-hero-kicker-size: 14px;
@@ -29,6 +30,7 @@
 }
 @media (prefers-color-scheme: dark) {
   html:not([data-theme='light']) {
+    --inbs-cta-surface: #112e43;
     --color-text: #e9f4fd;
     --color-surface: #091c2e;
     --color-panel: #102c44;
@@ -40,6 +42,7 @@
   }
 }
 html[data-theme='dark'] {
+  --inbs-cta-surface: #112e43;
   --color-text: #e9f4fd;
   --color-surface: #091c2e;
   --color-panel: #102c44;

@@ -6,6 +6,7 @@ import { isLocale, locales } from '@/lib/site';
 import { localeAlternates, siteIndexable, siteUrl } from '@/lib/seo';
 import { SmoothScroll } from '@/components/shared/smooth-scroll';
 import '../globals.css';
+import '@/styles/editorial-cta.css';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

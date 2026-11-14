@@ -1,0 +1,450 @@
+/* INBS REAL ESTATE — HOME
+   Single page stylesheet: foundation / header / editorial statement / CTA / footer / responsive / themes.
+   Component markup lives in src/components, copy in src/content. */
+
+/* 01 — FOUNDATION */
+.re-home {
+  --re-paper:#f3f7fa;--re-white:#ffffff;--re-ink:#092f4d;--re-muted:#567186;
+  --re-rule:#d5e4ee;--re-accent:#126cb5;--re-sky:#79bbef;--re-navy:#06356b;
+  --re-surface:#e8f1f7;--re-panel:#ffffff;
+  background:var(--re-paper);color:var(--re-ink);overflow:clip;isolation:isolate;
+}
+.re-home * {box-sizing:border-box}
+.re-home a {text-decoration:none}
+.re-home button {font-family:inherit}
+.re-home section[id] {scroll-margin-top:92px}
+.re-home :where(button,a):focus-visible {outline:3px solid #a1d6ff;outline-offset:4px}
+.re-shell {width:min(100% - 104px,1320px);margin-inline:auto}
+
+/* 02 — NAVIGATION: mirrored from main INBS header/drawer, with architectural signal */
+.inbs-header {position:fixed;top:0;left:0;right:0;z-index:70;transition:background .45s ease,box-shadow .45s ease,color .45s ease}
+.inbs-header.is-transparent {background:transparent;color:#fff}
+.inbs-header.is-solid {background:#fff;color:#092d4a;box-shadow:0 7px 30px #001d3820}
+html[data-theme=dark] .inbs-header.is-solid {background:#182738;color:#edf3f8;box-shadow:0 6px 24px #00000025}
+.inbs-header-inner {height:86px;display:flex;align-items:center;gap:32px}
+.inbs-brand,.inbs-drawer-brand {display:flex;align-items:center;gap:11px}
+.inbs-brand {margin-inline-end:auto;min-width:max-content}
+.inbs-brand img {width:128px;height:auto;max-height:69px;object-fit:contain}
+.inbs-brand-divider {height:30px;width:1px;background:currentColor;opacity:.42;flex:none}
+.inbs-brand-descriptor {font-size:9px;font-weight:800;line-height:1.35;letter-spacing:.18em}
+.inbs-header.is-transparent .inbs-brand img {filter:brightness(0) invert(1)}
+html[data-theme=dark] .inbs-header.is-solid .inbs-brand img {filter:brightness(0) invert(1)}
+.inbs-primary-nav {display:flex;align-items:center;gap:clamp(15px,2.3vw,34px)}
+.inbs-primary-nav a {position:relative;padding:8px 0;font-weight:600;font-size:13px;white-space:nowrap}
+.inbs-primary-nav a:after {content:"";position:absolute;bottom:2px;inset-inline-start:0;width:100%;height:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s}
+.inbs-primary-nav a:hover:after,.inbs-primary-nav a.active:after {transform:scaleX(1)}
+html[dir=rtl] .inbs-primary-nav a:after {transform-origin:right}
+.inbs-header-actions {display:flex;align-items:center;gap:7px}
+.inbs-contact-button {display:flex;align-items:center;gap:18px;background:var(--brand-blue);color:#fff;padding:13px 17px;font-weight:650;font-size:var(--font-size-button,14px);white-space:nowrap;margin-inline-end:8px;border-radius:var(--radius-button,7px);transition:background .25s,transform .25s}
+.inbs-contact-button:hover {background:var(--brand-deep);transform:translateY(-2px)}
+.inbs-icon-button {width:41px;height:41px;border:0;background:transparent;color:inherit;display:grid;place-items:center;border-radius:50%;cursor:pointer;transition:background .2s,transform .3s}
+.inbs-icon-button:hover {background:#7bafca35;transform:translateY(-2px)}
+.inbs-theme-show-dark {display:none}
+html[data-theme=dark] .inbs-theme-show-dark {display:inline-flex}
+html[data-theme=dark] .inbs-theme-show-light {display:none}
+.inbs-drawer-backdrop {position:fixed;inset:0;background:#041a2db0;border:0;z-index:72;cursor:pointer;height:100dvh}
+.inbs-drawer {position:fixed;top:0;bottom:0;right:0;width:min(430px,90vw);height:100dvh;max-height:100dvh;background:#fff;color:#0a2c44;z-index:73;padding:28px clamp(24px,3vw,46px);display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;box-shadow:-20px 0 50px #081f3240}
+html[dir=rtl] .inbs-drawer {right:auto;left:0}
+.inbs-drawer-top {min-height:85px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-shrink:0}
+.inbs-drawer-brand img {width:125px;height:auto;object-fit:contain}
+.inbs-drawer-close {width:42px;height:42px;display:grid;place-items:center;border:1px solid #c5d5e0;border-radius:var(--radius-control,9px);background:transparent;color:inherit;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.inbs-drawer-close:hover {background:#e8f3fa;border-color:#6ba8d1;transform:rotate(90deg)}
+.inbs-drawer nav {display:flex;flex-direction:column;gap:5px;padding:18px 0;flex:1 0 auto}
+.inbs-drawer nav a {font-size:16px;border:0;border-radius:var(--radius-control,9px);padding:15px 16px;display:flex;justify-content:flex-start;align-items:center;gap:15px;transition:background .22s,color .22s,transform .22s}
+.inbs-drawer nav a:hover,.inbs-drawer nav a.active {background:#e8f3fa;color:#075094;transform:translateX(3px)}
+html[dir=rtl] .inbs-drawer nav a:hover {transform:translateX(-3px)}
+.inbs-drawer-bottom {margin-top:auto;display:flex;justify-content:space-between;gap:12px;color:#6c8698;font-size:12px;padding-top:24px;flex-shrink:0}
+.inbs-drawer-bottom a {overflow-wrap:anywhere}
+html[data-theme=dark] .inbs-drawer {background:#182738;color:#edf3f8;box-shadow:-20px 0 60px #0008}
+html[data-theme=dark] .inbs-drawer-close {border-color:#55728a}
+html[data-theme=dark] .inbs-drawer-close:hover {background:#254b68}
+html[data-theme=dark] .inbs-drawer nav a:hover,html[data-theme=dark] .inbs-drawer nav a.active {background:#29445c;color:#e8f5ff}
+html[data-theme=dark] .inbs-drawer-bottom {color:#b1c9d9}
+html[data-theme=dark] .inbs-drawer-top img {filter:brightness(0) invert(1)}
+/* Distinct real estate signature: facade roofline and travelling light, not INBS network path. */
+.inbs-drawer-architecture {flex:0 0 auto;width:100%;height:36px;margin:3px 0 6px;pointer-events:none}
+.inbs-drawer-architecture svg {display:block;width:100%;height:100%;overflow:visible}
+.inbs-drawer-architecture-grid {stroke:#126cb530;stroke-width:.7;fill:none;vector-effect:non-scaling-stroke}
+.inbs-drawer-architecture-path {stroke:var(--brand-blue);stroke-width:1.35;opacity:.76;fill:none;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.inbs-drawer-architecture-end {fill:var(--brand-blue)}
+.inbs-drawer-architecture-traveller {fill:var(--brand-light);filter:drop-shadow(0 0 3px #79bbef)}
+html[data-theme=dark] .inbs-drawer-architecture-grid {stroke:#85c6f52b}
+html[data-theme=dark] .inbs-drawer-architecture-path {stroke:#85c6f5}
+html[data-theme=dark] .inbs-drawer-architecture-end {fill:#85c6f5}
+@media(prefers-reduced-motion:reduce){.inbs-drawer-architecture-traveller{display:none}}
+@media(min-width:1151px){.inbs-primary-nav a{font-size:15px}}
+@media(max-width:1150px){.inbs-primary-nav{display:none}}
+@media(max-width:760px){
+ .inbs-header-inner{height:72px}
+ .inbs-brand img{width:98px}
+ .inbs-brand-divider{height:25px}
+ .inbs-brand-descriptor{font-size:8px}
+ .inbs-contact-button{display:none}
+ .inbs-icon-button{width:36px}
+ .inbs-drawer{padding:clamp(22px,3.3vh,34px) 24px 24px}
+ .inbs-drawer-top{min-height:87px}
+ .inbs-drawer nav{padding:clamp(18px,3vh,30px) 0 15px;gap:clamp(7px,1.1vh,12px);flex:1 1 auto}
+ .inbs-drawer nav a{padding:clamp(12px,1.65vh,17px) 14px;min-height:49px;font-size:17px;gap:14px}
+ .inbs-drawer-bottom{padding-top:18px}
+}
+@media(max-height:680px) and (max-width:760px){
+ .inbs-drawer{padding-block:15px}
+ .inbs-drawer-top{min-height:65px}
+ .inbs-drawer nav{padding:10px 0 5px;gap:4px}
+ .inbs-drawer nav a{min-height:42px;padding:9px 12px;font-size:15px}
+ .inbs-drawer-bottom{padding-top:8px}
+}
+
+/* 07 — BRAND STATEMENT: media interlude */
+.re-statement {min-height:470px;display:grid;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:#0b3453;color:#fff;padding:95px 0}
+.re-statement-image,.re-statement-shade {position:absolute;inset:0}
+.re-statement-image {z-index:-2}
+.re-statement-image img {object-fit:cover;object-position:center}
+.re-statement-shade {z-index:-1;background:linear-gradient(90deg,#052641eb,#092c4dc4,#052947a5)}
+.re-statement-content {text-align:center;max-width:950px}
+.re-statement-eyebrow {font-size:10px;letter-spacing:.22em;color:#b4ddf6;font-weight:750}
+.re-statement p {font-size:clamp(35px,4vw,63px);line-height:1.28;font-weight:450;letter-spacing:-.05em;margin:25px auto 27px!important}
+.re-statement-signature {font-size:11px;letter-spacing:.14em;color:#bddbf0}
+
+/* 08 — CTA presentation comes from shared editorial-cta.css. */
+
+/* 09 — Footer: original INBS rules, including responsive breakpoints and dark mode. */
+.inbs-footer{position:relative;background:#082c49;color:white;border-radius:35px 35px 0 0;padding-top:90px;margin-top:0}
+
+.inbs-footer-top{display:flex;align-items:end;justify-content:space-between;gap:30px;border-bottom:1px solid #ffffff3b;padding-bottom:58px}
+
+.inbs-footer-top p{font-size:11px;letter-spacing:.12em;color:#bfd6e7}
+
+.inbs-footer-top h2{font-weight:550;font-size:clamp(38px,4vw,60px);letter-spacing:-.04em;margin:20px 0 0}
+
+.inbs-footer-top>a{display:flex;align-items:center;gap:28px;color:#0b3452;background:#effafb;padding:16px 22px;font-size:13px;font-weight:700;white-space:nowrap}
+
+.inbs-footer-grid{display:grid;grid-template-columns:1.35fr .9fr 1fr 1.15fr;gap:38px;padding:62px 0}
+
+.inbs-footer-grid h3{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 23px;color:#b0d2e5}
+
+.inbs-footer-grid a{display:flex;align-items:center;gap:9px;line-height:1.6;padding:5px 0;font-size:13px;color:#e2edf5}
+
+.inbs-footer-grid a:hover{color:#8bd2f4}
+
+.inbs-footer-grid p{line-height:1.8;font-size:13px;color:#d1e2ec}
+
+.inbs-footer-about img{width:134px;height:auto;filter:brightness(0) invert(1)}
+
+.inbs-footer-about p{max-width:285px}
+
+.inbs-footer-grid>div:last-child p{display:flex;align-items:flex-start;gap:8px}
+
+.inbs-footer-bottom{border-top:1px solid #ffffff3b;padding:22px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:12px;color:#b9d4e3}
+
+.inbs-footer-bottom>div{display:flex;gap:20px}
+
+@media(max-width:760px) {
+  .inbs-footer-top{flex-direction:column;align-items:start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about{grid-column:1/-1}
+}
+
+@media(max-width:520px) {
+  .inbs-footer-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:520px) {
+  .inbs-footer-bottom{flex-wrap:wrap}
+}
+
+.inbs-contact-button,.inbs-hero-cta,.inbs-footer-top>a{border-radius:var(--radius-button)}
+
+.inbs-contact-button,.inbs-footer-top>a{font-size:var(--font-size-button)}
+
+.inbs-footer-about img{margin-bottom:24px}
+
+.inbs-footer-about p{font-size:15px;line-height:1.85;margin-top:14px}
+
+.inbs-footer-grid a{font-size:14px}
+
+.inbs-footer-grid p{font-size:14px}
+
+.inbs-copyright{display:inline-flex;align-items:center;gap:9px}
+
+.inbs-footer-bottom>div{margin-inline-start:auto}
+
+.inbs-footer-top>a{transition:transform .25s,background .25s}
+
+.inbs-footer-top>a:hover{transform:translateY(-3px);background:#d6ecfa}
+
+.inbs-footer{isolation:isolate;background:radial-gradient(ellipse 75% 75% at 5% 5%,#225d87 0%,transparent 65%),linear-gradient(135deg,#103c60 0%,#082e4d 42%,#061b31 100%);box-shadow:inset 0 1px 0 #85c9f52b}
+
+
+
+.inbs-footer-container{position:relative}
+
+.inbs-footer-top{padding-bottom:65px}
+
+.inbs-footer-grid{grid-template-columns:1.3fr .82fr 1fr 1.2fr;gap:clamp(24px,3vw,55px);padding-top:74px}
+
+.inbs-footer-grid>div{min-width:0}
+
+.inbs-footer-about img{width:175px;height:auto;margin:0}
+
+.inbs-footer-about p{margin:26px 0 0;max-width:320px;line-height:1.85;font-size:15px}
+
+.inbs-socials{display:flex;align-items:center;gap:10px;margin-top:24px}
+
+.inbs-socials a{width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid #b4daef55;border-radius:var(--radius-control);color:#f1f9ff;transition:background .24s,border-color .24s,transform .24s}
+
+.inbs-socials a:hover{background:#ffffff24;border-color:#acdfff;transform:translateY(-4px)}
+
+.inbs-footer-contact>a{align-items:flex-start;gap:11px;overflow-wrap:anywhere}
+
+.inbs-footer-contact>a>svg{flex:none;margin-top:4px}
+
+.inbs-footer-contact>a span{flex:1;min-width:0}
+
+.inbs-footer-contact>a .inbs-phone-number{flex:0 0 auto;direction:ltr;unicode-bidi:isolate}
+
+.inbs-footer-contact .map-external{display:inline;vertical-align:middle;margin-inline-start:4px}
+
+.inbs-footer-bottom{justify-content:space-between}
+
+.inbs-copyright{white-space:normal;gap:6px;flex-wrap:wrap}
+
+@media(max-width:850px) {
+  .inbs-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+}
+
+@media(max-width:850px) {
+  .inbs-footer-about{grid-column:auto}
+}
+
+@media(max-width:560px) {
+  .inbs-footer-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:560px) {
+  .inbs-footer-top{padding-bottom:50px}
+}
+
+@media(max-width:560px) {
+  .inbs-footer{border-radius:26px 26px 0 0}
+}
+
+.inbs-footer-grid h3{font-size:clamp(15px,1.2vw,18px);letter-spacing:.045em;font-weight:700;line-height:1.45}
+
+@media(max-width:760px) {
+  .inbs-footer-grid>div{justify-self:stretch}
+}
+
+.inbs-footer{overflow:hidden}
+
+.inbs-footer-watermark{position:absolute;top:-.06em;inset-inline-end:-.035em;z-index:0;pointer-events:none;user-select:none;font-size:clamp(180px,27vw,490px);font-weight:800;line-height:1;letter-spacing:-.13em;color:#d4ecff0b;white-space:nowrap}
+
+.inbs-footer-container{z-index:1}
+
+[dir=rtl] .inbs-footer-watermark{letter-spacing:0}
+
+
+
+
+.inbs-footer-watermark{font-size:clamp(155px,23vw,410px);letter-spacing:0;inset-inline-end:clamp(14px,4vw,64px)}
+
+
+@media(max-width:760px) {
+  .inbs-footer-watermark{font-size:clamp(105px,21vw,190px);letter-spacing:0;inset-inline-end:14px}
+}
+
+
+
+@media(min-width:761px) {
+  .inbs-footer-watermark{font-size:clamp(125px,18vw,310px);letter-spacing:-.055em}
+}
+
+@media(min-width:761px) {
+  .inbs-footer-watermark{top:55px}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-top,.inbs-footer-grid,.inbs-footer-about,.inbs-footer-contact>a,.inbs-footer-contact>h3,.inbs-footer-bottom{text-align:start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-top{align-items:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-top>a{align-self:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-grid a{justify-content:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about{display:flex;flex-direction:column;align-items:flex-start;text-align:start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about img{display:block;margin-inline:0}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about p{margin-inline:0}
+}
+
+@media(max-width:760px) {
+  .inbs-socials{justify-content:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-grid .inbs-socials a{display:grid;place-items:center;justify-content:center;align-items:center;flex:0 0 40px;width:40px;height:40px;padding:0}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a{display:flex;justify-content:flex-start;align-items:flex-start;gap:11px;line-height:1.65}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a>svg{flex:0 0 18px;margin-top:3px}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a>span{flex:1;min-width:0}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a>.inbs-phone-number{flex:0 0 auto}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-bottom{justify-content:space-between}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-bottom>div{margin-inline-start:0;justify-content:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-watermark{top:clamp(295px,38vh,405px);left:auto;right:auto;inset-inline-start:14px;inset-inline-end:auto;transform:none;text-align:start}
+}
+
+@media(max-width:760px) {
+  [dir=rtl] .inbs-footer-watermark{left:auto;right:auto;inset-inline-start:14px;inset-inline-end:auto;transform:none}
+}
+
+.inbs-footer{position:relative;z-index:2;background:radial-gradient(ellipse 75% 75% at 5% 5%,#126cb555 0%,transparent 65%),linear-gradient(135deg,var(--brand-blue) 0%,var(--brand-deep) 54%,#042448 100%)}
+
+html[data-theme=dark] .inbs-footer{
+ background:
+  radial-gradient(ellipse 72% 85% at 8% 0%,rgba(38,82,119,.28) 0%,transparent 70%),
+  linear-gradient(135deg,#192d40 0%,#122337 48%,#0c1c2d 100%);
+ box-shadow:inset 0 1px 0 #b9d5e414;
+}
+
+
+html[data-theme=dark] .inbs-footer-watermark{color:#d4ecff09}
+
+@media (min-width:1151px) {
+  .inbs-footer-top p{font-size:14px}
+}
+
+.inbs-footer-grid a.inbs-footer-more-services{
+  display:inline-flex;
+  width:fit-content;
+  align-items:center;
+  gap:9px;
+  margin-top:12px;
+  padding:10px 0 5px;
+  border-top:1px solid #a6d9f15c;
+  color:#a8e2ff;
+  font-weight:750;
+  transition:color .2s ease,gap .2s ease;
+}
+
+.inbs-footer-more-services svg{flex:none;transition:transform .2s ease}
+
+.inbs-footer-grid a.inbs-footer-more-services:hover,
+.inbs-footer-grid a.inbs-footer-more-services:focus-visible{
+  color:#fff;
+  gap:13px;
+}
+
+.inbs-footer-more-services:hover svg{transform:translate(2px,-2px)}
+
+[dir=rtl] .inbs-footer-more-services:hover svg{transform:translate(-2px,-2px)}
+
+@media(prefers-reduced-motion:reduce) {
+  .inbs-footer-grid a.inbs-footer-more-services,
+  .inbs-footer-more-services svg{transition:none}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .inbs-footer-more-services:hover svg{transform:none}
+}
+
+/* INBS Real Estate footer skyline: independent of the original circular glow.
+   Drawn as a legible multi-layer architectural silhouette, anchored to ground. */
+.inbs-footer-skyline{
+  position:absolute;
+  inset-inline:0;
+  bottom:0;
+  z-index:0;
+  width:100%;
+  height:clamp(145px,20vw,285px);
+  pointer-events:none;
+  overflow:hidden;
+  color:#afe0fb;
+  /* Same quiet decorative role as the original low-opacity INBS watermark. */
+  opacity:.23;
+}
+.inbs-footer-skyline svg{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.inbs-footer-skyline-rear{opacity:.44}
+.inbs-footer-skyline-structure{opacity:.55}
+.inbs-footer-skyline-accents{opacity:.4}
+.inbs-footer-container{position:relative;z-index:1}
+html[data-theme=dark] .inbs-footer-skyline{opacity:.2}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme=light]) .inbs-footer-skyline{opacity:.2}
+}
+@media(max-width:760px){
+  .inbs-footer-skyline{height:clamp(115px,25vw,175px)}
+}
+@media(max-width:480px){
+  .inbs-footer-skyline{height:112px;opacity:.18}
+  .inbs-footer-skyline-accents{display:none}
+}
+
+/* 10 — RTL AND THEMES */
+html[dir=rtl] .re-statement p {letter-spacing:0}
+html[dir=rtl] .re-service-choice {text-align:right}
+html[data-theme=dark] .re-home {
+  --re-paper:#0e2333;--re-white:#163a54;--re-ink:#e9f5fc;--re-muted:#b0c9d9;--re-rule:#355773;--re-accent:#9fd6f8;--re-sky:#a6ddff;--re-surface:#132d41;--re-panel:#183e59;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme=light]) .re-home {--re-paper:#0e2333;--re-white:#163a54;--re-ink:#e9f5fc;--re-muted:#b0c9d9;--re-rule:#355773;--re-accent:#9fd6f8;--re-sky:#a6ddff;--re-surface:#132d41;--re-panel:#183e59}
+}
+
+/* 11 — RESPONSIVE */
+
+
+@media(max-width:700px){
+ .re-shell,.re-header-inner,.re-hero-inner {width:calc(100% - 40px)}
+ .re-statement {min-height:380px;padding:75px 0}
+ .re-statement p {font-size:clamp(33px,7.2vw,50px)}
+}
+
+
+
+/* Shared footer handoff: only pages with a final editorial CTA overlap the rounded footer. */
+main:has(> .inbs-editorial-cta:last-child) + .inbs-footer {
+  margin-top: -24px;
+}

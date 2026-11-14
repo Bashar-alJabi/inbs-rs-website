@@ -16,6 +16,37 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   const html = await response.text();
   assert.match(html, new RegExp(`<html[^>]*lang="${locale}"[^>]*dir="${dir}"`));
   assert.match(html, /INBS/);
+  assert.doesNotMatch(html, /id="re-hero-title"/);
+  assert.doesNotMatch(html, /aria-roledescription="slideshow"/);
+  assert.doesNotMatch(html, /id="re-intro-title"/);
+  assert.doesNotMatch(html, /id="re-expertise-title"/);
+  assert.doesNotMatch(html, /id="re-journey-title"/);
+  assert.match(html, /id="statement"/);
+  assert.match(html, locale === 'ar' ? /كل مساحة تحمل حكاية، وكل عنوان تبدأ معه حكاية جديدة/ : /Every space holds a story\. Every address begins a new one\./);
+  assert.match(html, /id="re-contact-title"/);
+  assert.match(html, /inbs-editorial-cta--home/);
+  assert.match(html, /inbs-editorial-cta-primary/);
+  assert.match(html, /inbs-editorial-cta-secondary/);
+  assert.match(html, new RegExp(`class="inbs-editorial-cta-action inbs-editorial-cta-primary" href="/${locale}/what-we-do"`));
+  assert.match(html, new RegExp(`class="inbs-editorial-cta-action inbs-editorial-cta-secondary" href="/${locale}/contact"`));
+  assert.match(html, locale === 'ar' ? /ماذا نقدم/ : /What We Do/);
+  assert.match(html, locale === 'ar' ? /تواصل معنا/ : /Contact us/);
+  assert.match(html, locale === 'ar' ? /استكشف فرصك العقارية/ : /Explore what’s possible/);
+  assert.match(html, locale === 'ar' ? /لنبدأ الحديث/ : /Start a conversation/);
+  assert.match(html, /class="inbs-footer"/);
+  assert.match(html, /class="inbs-footer-grid"/);
+  assert.match(html, /class="inbs-footer-watermark"/);
+  assert.match(html, /class="inbs-footer-skyline"/);
+  assert.doesNotMatch(html, /class="inbs-footer-glow"/);
+  assert.match(html, new RegExp(`href="/${locale}/legal"`));
+  assert.match(html, locale === 'ar' ? /المعلومات القانونية/ : /Legal Information/);
+  assert.match(html, locale === 'ar' ? /ماذا نقدم/ : /What We Do/);
+  assert.match(html, locale === 'ar' ? /استكشف مجالات خبرتنا/ : /Explore our expertise/);
+  assert.doesNotMatch(html, /Explore our services/);
+  assert.match(html, /info@inbsrealestate\.com/);
+  assert.match(html, locale === 'ar' ? /حيث تجد الفرص عنوانها/ : /Where possibilities find an address/);
+
+  assert.match(html, /statement-dubai-luxury-penthouse\.webp/);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/);
   assert.match(html, /\/brand\/inbs-logo\.png/);
   assert.match(response.headers.get('x-content-type-options') || '', /nosniff/);
@@ -36,6 +67,13 @@ for (const path of ['/en/unknown-page', '/ar/unknown-page']) await expectStatus(
 for (const name of ['hero-01', 'hero-02', 'hero-03', 'story-04', 'story-05',
                     'story-06', 'story-07', 'story-08', 'story-09', 'story-10']) {
   const response = await expectStatus(`/images/team/${name}.webp`, 200);
+  assert.match(response.headers.get('content-type') || '', /image\/webp/i);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
+  assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
+}
+for (const image of ['statement-dubai-luxury-penthouse', 'statement-luxury-villa', 'statement-dubai-skyline']) {
+  const response = await expectStatus(`/images/home/${image}.webp`, 200);
   assert.match(response.headers.get('content-type') || '', /image\/webp/i);
   const bytes = Buffer.from(await response.arrayBuffer());
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
