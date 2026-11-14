@@ -30,6 +30,8 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, new RegExp(`class="inbs-editorial-cta-action inbs-editorial-cta-secondary" href="/${locale}/contact"`));
   assert.match(html, locale === 'ar' ? /ماذا نقدم/ : /What We Do/);
   assert.match(html, locale === 'ar' ? /تواصل معنا/ : /Contact us/);
+  assert.match(html, locale === 'ar' ? /استكشف فرصك العقارية/ : /Explore what’s possible/);
+  assert.match(html, locale === 'ar' ? /لنبدأ الحديث/ : /Start a conversation/);
   assert.match(html, /class="inbs-footer"/);
   assert.match(html, /class="inbs-footer-grid"/);
   assert.match(html, /class="inbs-footer-watermark"/);
