@@ -46,7 +46,7 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /info@inbsrealestate\.com/);
   assert.match(html, locale === 'ar' ? /حيث تجد الفرص عنوانها/ : /Where possibilities find an address/);
 
-  assert.match(html, /statement-dubai-skyline\.webp/);
+  assert.match(html, /statement-luxury-villa\.webp/);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/);
   assert.match(html, /\/brand\/inbs-logo\.png/);
   assert.match(response.headers.get('x-content-type-options') || '', /nosniff/);
