@@ -5,7 +5,7 @@ export const companyContact = {
     { kind: 'landline', label: '+971 4 221 9222', href: 'tel:+97142219222' },
   ],
   emails: [
-    { kind: 'official', label: 'info@inbs-uae.com', href: 'mailto:info@inbs-uae.com' },
+    { kind: 'official', label: 'info@inbsrealestate.com', href: 'mailto:info@inbsrealestate.com' },
     { kind: 'additional', label: 'jalal.omar2021@gmail.com', href: 'mailto:jalal.omar2021@gmail.com' },
   ],
   address: {
