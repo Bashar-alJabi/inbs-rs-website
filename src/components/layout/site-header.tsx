@@ -93,10 +93,10 @@ export function SiteHeader({locale}:{locale:Locale}){
  <div className="inbs-drawer-architecture" aria-hidden="true">
   <svg viewBox="0 0 320 34" preserveAspectRatio="none" focusable="false">
    <path className="inbs-drawer-architecture-grid" d="M 0 29 H 320 M 29 29 V 14 M 70 29 V 14 M 112 29 V 8 M 153 29 V 8 M 196 29 V 16 M 237 29 V 16 M 278 29 V 21"/>
-   <path className="inbs-drawer-architecture-path" d="M 0 29 H 29 V 14 H 70 V 29 H 112 V 8 H 153 V 29 H 196 V 16 H 237 V 29 H 278 V 21 H 320"/>
-   <circle className="inbs-drawer-architecture-end" cx="320" cy="21" r="2"/>
+   <path className="inbs-drawer-architecture-path" d="M 0 29 H 29 V 14 H 70 V 29 H 112 V 8 H 153 V 29 H 196 V 16 H 237 V 29 H 278 V 21 H 305 V 29 H 320"/>
+   <circle className="inbs-drawer-architecture-end" cx="320" cy="29" r="2"/>
    <circle className="inbs-drawer-architecture-traveller" r="3.2">
-    <animateMotion dur="10s" repeatCount="indefinite" path="M 0 29 H 29 V 14 H 70 V 29 H 112 V 8 H 153 V 29 H 196 V 16 H 237 V 29 H 278 V 21 H 320"/>
+    <animateMotion dur="10s" repeatCount="indefinite" path="M 0 29 H 29 V 14 H 70 V 29 H 112 V 8 H 153 V 29 H 196 V 16 H 237 V 29 H 278 V 21 H 305 V 29 H 320"/>
    </circle>
   </svg>
  </div>

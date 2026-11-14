@@ -27,7 +27,8 @@
 /* 02 — NAVIGATION: mirrored from main INBS header/drawer, with architectural signal */
 .inbs-header {position:fixed;top:0;left:0;right:0;z-index:70;transition:background .45s ease,box-shadow .45s ease,color .45s ease}
 .inbs-header.is-transparent {background:transparent;color:#fff}
-.inbs-header.is-solid {background:var(--re-panel);color:var(--re-ink);box-shadow:0 7px 30px #001d3820}
+.inbs-header.is-solid {background:#fff;color:#092d4a;box-shadow:0 7px 30px #001d3820}
+html[data-theme=dark] .inbs-header.is-solid {background:#182738;color:#edf3f8;box-shadow:0 6px 24px #00000025}
 .inbs-header-inner {height:86px;display:flex;align-items:center;gap:32px}
 .inbs-brand,.inbs-drawer-brand {display:flex;align-items:center;gap:11px}
 .inbs-brand {margin-inline-end:auto;min-width:max-content}
