@@ -22,6 +22,7 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.doesNotMatch(html, /id="re-expertise-title"/);
   assert.doesNotMatch(html, /id="re-journey-title"/);
   assert.match(html, /id="statement"/);
+  assert.match(html, locale === 'ar' ? /كل مساحة تحمل حكاية، وكل عنوان تبدأ معه حكاية جديدة/ : /Every space holds a story\. Every address begins a new one\./);
   assert.match(html, /id="re-contact-title"/);
   assert.match(html, /inbs-editorial-cta--home/);
   assert.match(html, /inbs-editorial-cta-primary/);
@@ -71,7 +72,7 @@ for (const name of ['hero-01', 'hero-02', 'hero-03', 'story-04', 'story-05',
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
   assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
 }
-for (const image of ['statement-dubai-skyline']) {
+for (const image of ['statement-luxury-villa', 'statement-dubai-skyline']) {
   const response = await expectStatus(`/images/home/${image}.webp`, 200);
   assert.match(response.headers.get('content-type') || '', /image\/webp/i);
   const bytes = Buffer.from(await response.arrayBuffer());
