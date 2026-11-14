@@ -10,4 +10,5 @@ export const pages = [
   { slug: 'insights', en: 'Insights', ar: 'مقالات' },
   { slug: 'careers', en: 'Careers', ar: 'الوظائف' },
   { slug: 'contact', en: 'Contact', ar: 'تواصل معنا' },
+  { slug: 'legal', en: 'Legal Information', ar: 'المعلومات القانونية' },
 ] as const;

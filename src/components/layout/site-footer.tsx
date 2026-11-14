@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight, AtSign, Mail, MapPin, Phone, Smartphone } from 'lucide-react';
 import { LinkedinIcon, InstagramIcon, FacebookIcon } from './social-icons';
 import { type Locale } from '@/lib/site';
-import { footerQuickPages } from '@/content/navigation';
+import { footerQuickPages, footerLegalPages } from '@/content/navigation';
 import { routes } from '@/lib/routes';
 import { Reveal } from '@/components/shared/reveal';
 import { companyContact, socialLinks } from '@/content/contact';
@@ -61,12 +61,12 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </Reveal>
           <Reveal delay={0.18}>
             <div>
-              <h3>{t.services}</h3>
+              <h3>{t.expertise}</h3>
               {services.map(service => (
                 <Link key={service.number} href={`${routes.home(locale)}#expertise`}>{service.name}</Link>
               ))}
               <Link className="inbs-footer-more-services" href={`${routes.home(locale)}#expertise`}>
-                {t.moreServices}<ArrowUpRight size={15} aria-hidden="true" />
+                {t.exploreExpertise}<ArrowUpRight size={15} aria-hidden="true" />
               </Link>
             </div>
           </Reveal>
@@ -90,7 +90,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         </div>
         <div className="inbs-footer-bottom">
           <span className="inbs-copyright">© INBS Real Estate <span>{t.rights}</span></span>
-          <div><Link href={`/${locale}/legal`}>{t.legal}</Link></div>
+          <div>{footerLegalPages.map(page => <Link key={page.slug} href={routes.page(locale, page.slug)}>{page[locale]}</Link>)}</div>
         </div>
       </div>
     </footer>
