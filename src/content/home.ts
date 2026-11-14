@@ -11,8 +11,8 @@ export const homeContent = {
     ctaTitleA: 'A place for what’s',
     ctaTitleB: 'next.',
     ctaBody: 'Whether you are exploring a move or weighing a property decision, we are here to talk it through.',
-    explore: 'What We Do',
-    contact: 'Contact us',
+    explore: 'Explore what’s possible',
+    contact: 'Start a conversation',
   },
   ar: {
     offerings: [
@@ -25,7 +25,7 @@ export const homeContent = {
     ctaTitleA: 'مساحة لأحلامك،',
     ctaTitleB: 'وعنوان لمستقبلك.',
     ctaBody: 'سواء كنت تخطط للانتقال أو تفكر بقرار عقاري، نحن هنا لنناقش خياراتك.',
-    explore: 'ماذا نقدم',
-    contact: 'تواصل معنا',
+    explore: 'استكشف فرصك العقارية',
+    contact: 'لنبدأ الحديث',
   },
 } as const;
