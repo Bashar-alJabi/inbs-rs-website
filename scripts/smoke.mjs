@@ -21,6 +21,12 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /id="re-expertise-title"/);
   assert.match(html, /id="re-journey-title"/);
   assert.match(html, /id="re-contact-title"/);
+  assert.match(html, /class="inbs-footer"/);
+  assert.match(html, /class="inbs-footer-grid"/);
+  assert.match(html, /class="inbs-footer-watermark"/);
+  assert.match(html, /info@inbsrealestate\.com/);
+  assert.match(html, locale === 'ar' ? /خطوتك العقارية القادمة تبدأ هنا/ : /Your next move starts here/);
+
   assert.match(html, /pexels-residence\.webp/);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/);
   assert.match(html, /\/brand\/inbs-logo\.png/);
