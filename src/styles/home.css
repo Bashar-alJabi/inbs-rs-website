@@ -251,9 +251,222 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 .re-contact-phone {display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #ffffffa0;padding:22px 0 13px;font-size:13px;color:#e9f7ff}
 .re-contact-circle {display:none}
 
-/* 09 — FOOTER: original INBS design values and mobile/dark refinements preserved. */
+/* 09 — FOOTER: rules transferred from the current original INBS website. */
+.inbs-footer{position:relative;background:#082c49;color:white;border-radius:35px 35px 0 0;padding-top:90px;margin-top:0}
 
-/* Keep the approved real-estate brand identification beside the original logo. */
+.inbs-footer-top{display:flex;align-items:end;justify-content:space-between;gap:30px;border-bottom:1px solid #ffffff3b;padding-bottom:58px}
+
+.inbs-footer-top p{font-size:11px;letter-spacing:.12em;color:#bfd6e7}
+
+.inbs-footer-top h2{font-weight:550;font-size:clamp(38px,4vw,60px);letter-spacing:-.04em;margin:20px 0 0}
+
+.inbs-footer-top>a{display:flex;align-items:center;gap:28px;color:#0b3452;background:#effafb;padding:16px 22px;font-size:13px;font-weight:700;white-space:nowrap}
+
+.inbs-footer-grid{display:grid;grid-template-columns:1.35fr .9fr 1fr 1.15fr;gap:38px;padding:62px 0}
+
+.inbs-footer-grid h3{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 23px;color:#b0d2e5}
+
+.inbs-footer-grid a{display:flex;align-items:center;gap:9px;line-height:1.6;padding:5px 0;font-size:13px;color:#e2edf5}
+
+.inbs-footer-grid a:hover{color:#8bd2f4}
+
+.inbs-footer-grid p{line-height:1.8;font-size:13px;color:#d1e2ec}
+
+.inbs-footer-about img{width:134px;height:auto;filter:brightness(0) invert(1)}
+
+.inbs-footer-about p{max-width:285px}
+
+.inbs-footer-grid>div:last-child p{display:flex;align-items:flex-start;gap:8px}
+
+.inbs-footer-bottom{border-top:1px solid #ffffff3b;padding:22px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:12px;color:#b9d4e3}
+
+.inbs-footer-bottom>div{display:flex;gap:20px}
+
+@media(max-width:760px) {
+.inbs-footer-top{flex-direction:column;align-items:start}
+}
+
+@media(max-width:760px) {
+.inbs-footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:760px) {
+.inbs-footer-about{grid-column:1/-1}
+}
+
+@media(max-width:520px) {
+.inbs-footer-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:520px) {
+.inbs-footer-bottom{flex-wrap:wrap}
+}
+
+/* Unified controls and typography are defined in tokens.css */
+.inbs-contact-button,.inbs-hero-cta,.inbs-footer-top>a{border-radius:var(--radius-button)}
+
+.inbs-contact-button,.inbs-footer-top>a{font-size:var(--font-size-button)}
+
+.inbs-footer-about img{margin-bottom:24px}
+
+.inbs-footer-about p{font-size:15px;line-height:1.85;margin-top:14px}
+
+.inbs-footer-grid a{font-size:14px}
+
+.inbs-footer-grid p{font-size:14px}
+
+.inbs-copyright{display:inline-flex;align-items:center;gap:9px}
+
+.inbs-footer-bottom>div{margin-inline-start:auto}
+
+.inbs-footer-top>a{transition:transform .25s,background .25s}
+
+.inbs-footer-top>a:hover{transform:translateY(-3px);background:#d6ecfa}
+
+.inbs-footer{isolation:isolate;background:radial-gradient(ellipse 75% 75% at 5% 5%,#225d87 0%,transparent 65%),linear-gradient(135deg,#103c60 0%,#082e4d 42%,#061b31 100%);box-shadow:inset 0 1px 0 #85c9f52b}
+
+.inbs-footer-glow{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:inherit;z-index:-1}
+
+.inbs-footer-glow:before{content:"";position:absolute;inset-inline-end:-300px;top:-350px;width:800px;height:800px;border:1px solid #9ed8ff24;border-radius:50%;box-shadow:0 0 0 90px #90cfff09,0 0 0 180px #9ad3ff08}
+
+.inbs-footer-container{position:relative}
+
+.inbs-footer-top{padding-bottom:65px}
+
+.inbs-footer-grid{grid-template-columns:1.3fr .82fr 1fr 1.2fr;gap:clamp(24px,3vw,55px);padding-top:74px}
+
+.inbs-footer-grid>div{min-width:0}
+
+.inbs-footer-about img{width:175px;height:auto;margin:0}
+
+.inbs-footer-about p{margin:26px 0 0;max-width:320px;line-height:1.85;font-size:15px}
+
+.inbs-socials{display:flex;align-items:center;gap:10px;margin-top:24px}
+
+.inbs-socials a{width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid #b4daef55;border-radius:var(--radius-control);color:#f1f9ff;transition:background .24s,border-color .24s,transform .24s}
+
+.inbs-socials a:hover{background:#ffffff24;border-color:#acdfff;transform:translateY(-4px)}
+
+.inbs-footer-contact>a{align-items:flex-start;gap:11px;overflow-wrap:anywhere}
+
+.inbs-footer-contact>a>svg{flex:none;margin-top:4px}
+
+.inbs-footer-contact>a span{flex:1;min-width:0}
+
+.inbs-footer-contact>a .inbs-phone-number{flex:0 0 auto;direction:ltr;unicode-bidi:isolate}
+
+.inbs-footer-contact .map-external{display:inline;vertical-align:middle;margin-inline-start:4px}
+
+.inbs-footer-bottom{justify-content:space-between}
+
+.inbs-copyright{white-space:normal;gap:6px;flex-wrap:wrap}
+
+@media(max-width:850px) {
+.inbs-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+}
+
+@media(max-width:850px) {
+.inbs-footer-about{grid-column:auto}
+}
+
+@media(max-width:560px) {
+.inbs-footer-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:560px) {
+.inbs-footer-top{padding-bottom:50px}
+}
+
+@media(max-width:560px) {
+.inbs-footer{border-radius:26px 26px 0 0}
+}
+
+.inbs-footer-grid h3{font-size:clamp(15px,1.2vw,18px);letter-spacing:.045em;font-weight:700;line-height:1.45}
+
+@media(max-width:760px) {
+.inbs-footer-grid>div{justify-self:stretch}
+}
+
+/* Subtle brand signature brought over from the retired final homepage CTA. */
+.inbs-footer{overflow:hidden}
+
+.inbs-footer-watermark{position:absolute;top:-.06em;inset-inline-end:-.035em;z-index:0;pointer-events:none;user-select:none;font-size:clamp(180px,27vw,490px);font-weight:800;line-height:1;letter-spacing:-.13em;color:#d4ecff0b;white-space:nowrap}
+
+.inbs-footer-container{z-index:1}
+
+[dir=rtl] .inbs-footer-watermark{letter-spacing:0}
+
+/* Preserve previous INBS signature; move only the orbital accent to bottom-right. */
+.inbs-footer-glow:before{top:auto;bottom:-350px}
+
+@media(max-width:760px) {
+.inbs-footer-glow:before{top:auto;bottom:-350px}
+}
+
+/* Footer ornament proportions: smaller signature, more recessed orbital accent. */
+.inbs-footer-watermark{font-size:clamp(155px,23vw,410px);letter-spacing:0;inset-inline-end:clamp(14px,4vw,64px)}
+
+.inbs-footer-glow:before{inset-inline-end:-470px;bottom:-490px;top:auto}
+
+@media(max-width:760px) {
+.inbs-footer-watermark{font-size:clamp(105px,21vw,190px);letter-spacing:0;inset-inline-end:14px}
+}
+
+@media(max-width:760px) {
+.inbs-footer-glow:before{inset-inline-end:-510px;bottom:-490px;top:auto}
+}
+
+.inbs-footer{position:relative;z-index:2;background:radial-gradient(ellipse 75% 75% at 5% 5%,#126cb555 0%,transparent 65%),linear-gradient(135deg,var(--brand-blue) 0%,var(--brand-deep) 54%,#042448 100%)}
+
+/* Dark footer: continue the neutral navy surfaces without the vivid blue opening. */
+html[data-theme=dark] .inbs-footer{
+ background:
+  radial-gradient(ellipse 72% 85% at 8% 0%,rgba(38,82,119,.28) 0%,transparent 70%),
+  linear-gradient(135deg,#192d40 0%,#122337 48%,#0c1c2d 100%);
+ box-shadow:inset 0 1px 0 #b9d5e414;
+}
+
+html[data-theme=dark] .inbs-footer-glow:before{
+ border-color:#9ed8ff16;
+ box-shadow:0 0 0 90px #90cfff05,0 0 0 180px #9ad3ff04;
+}
+
+html[data-theme=dark] .inbs-footer-watermark{color:#d4ecff09}
+
+/* The directory CTA is an action, not a sixth service listing. */
+.inbs-footer-grid a.inbs-footer-more-services{
+  display:inline-flex;
+  width:fit-content;
+  align-items:center;
+  gap:9px;
+  margin-top:12px;
+  padding:10px 0 5px;
+  border-top:1px solid #a6d9f15c;
+  color:#a8e2ff;
+  font-weight:750;
+  transition:color .2s ease,gap .2s ease;
+}
+
+.inbs-footer-more-services svg{flex:none;transition:transform .2s ease}
+
+.inbs-footer-grid a.inbs-footer-more-services:hover,
+.inbs-footer-grid a.inbs-footer-more-services:focus-visible{
+  color:#fff;
+  gap:13px;
+}
+
+.inbs-footer-more-services:hover svg{transform:translate(2px,-2px)}
+
+[dir=rtl] .inbs-footer-more-services:hover svg{transform:translate(-2px,-2px)}
+
+@media(prefers-reduced-motion:reduce) {
+.inbs-footer-grid a.inbs-footer-more-services,
+  .inbs-footer-more-services svg{transition:none}
+}
+
+@media(prefers-reduced-motion:reduce) {
+.inbs-footer-more-services:hover svg{transform:none}
+}
 
 /* 10 — RTL AND THEMES */
 html[dir=rtl] .re-home h1,html[dir=rtl] .re-home h2,html[dir=rtl] .re-home h3 {letter-spacing:0}
