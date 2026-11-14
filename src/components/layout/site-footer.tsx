@@ -64,9 +64,9 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <div>
               <h3>{t.expertise}</h3>
               {services.map(service => (
-                <Link key={service.number} href={`${routes.home(locale)}#expertise`}>{service.name}</Link>
+                <Link key={service.number} href={routes.page(locale, 'what-we-do')}>{service.name}</Link>
               ))}
-              <Link className="inbs-footer-more-services" href={`${routes.home(locale)}#expertise`}>
+              <Link className="inbs-footer-more-services" href={routes.page(locale, 'what-we-do')}>
                 {t.exploreExpertise}<ArrowUpRight size={15} aria-hidden="true" />
               </Link>
             </div>

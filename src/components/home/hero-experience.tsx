@@ -81,7 +81,7 @@ export function HomeHero({ locale }: { locale: Locale }) {
               {paused ? <Play size={16}/> : <Pause size={16}/>}
             </button>
           </div>
-          <a href="#approach" className="re-hero-discover">{t.scroll}<ArrowDown size={18} aria-hidden="true"/></a>
+          <a href="#statement" className="re-hero-discover">{t.scroll}<ArrowDown size={18} aria-hidden="true"/></a>
           <span className="re-hero-caption">{slide.note}</span>
         </div>
       </div>

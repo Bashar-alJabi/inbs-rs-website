@@ -145,86 +145,6 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 .re-hero-discover svg {border:1px solid #ffffff78;border-radius:50%;width:36px;height:36px;padding:9px}
 .re-hero-caption {font-size:10px;letter-spacing:.16em;font-weight:650;color:#d1e9f7}
 
-/* 04 — APPROACH: asymmetric photography / editorial introduction */
-.re-intro {padding:clamp(95px,10vw,175px) 0;background:var(--re-paper)}
-.re-intro-inner {display:grid;grid-template-columns:1fr .95fr;column-gap:clamp(45px,7vw,120px);row-gap:35px;position:relative;align-items:center}
-.re-intro-heading {align-self:center;position:relative;z-index:2}
-.re-intro-heading .re-kicker {margin-top:48px;margin-bottom:22px}
-.re-intro h2 {font-size:clamp(58px,5.3vw,85px);line-height:1.18;font-weight:540;letter-spacing:-.065em}
-.re-intro h2 span {font-weight:450}
-.re-intro h2 em {font-style:normal;color:var(--re-accent);font-weight:550}
-.re-intro-art {position:relative;min-height:660px;grid-column:2;grid-row:1 / span 2}
-.re-intro-image {position:absolute;inset:40px 0 40px 10%;border-radius:11px 11px 90px 11px;overflow:hidden;box-shadow:0 30px 80px #082b4b20}
-.re-intro-image img {object-fit:cover;object-position:54% center;transition:transform 1.1s}
-.re-intro-image:hover img {transform:scale(1.045)}
-.re-intro-image-label {position:absolute;bottom:25px;inset-inline-start:28px;color:#fff;font-size:10px;letter-spacing:.18em;text-shadow:0 1px 6px #001f3a}
-.re-intro-orbit {position:absolute;z-index:2;top:0;inset-inline-start:-16%;width:200px;height:200px;pointer-events:none}
-.re-intro-orbit span {position:absolute;border:1px solid #3d8db467;border-radius:50%;inset:0}
-.re-intro-orbit span:nth-child(2) {inset:16%}
-.re-intro-orbit span:nth-child(3) {inset:35%;background:var(--re-accent)}
-.re-intro-body {grid-column:1;grid-row:2;max-width:580px;align-self:start;padding-inline-start:48px}
-.re-intro-asterisk {display:block;color:var(--re-accent);font-size:30px;margin-bottom:12px}
-.re-intro-body>p {font-size:clamp(15px,1.25vw,18px);line-height:1.92;color:var(--re-muted)}
-.re-intro-signature {display:block;margin-top:25px;font-size:10px;letter-spacing:.16em;font-weight:750;color:var(--re-accent)}
-.re-intro-signature span {padding:0 7px}
-.re-intro-body .re-inline-link {margin-top:26px;color:var(--re-ink)}
-
-/* 05 — SERVICES: image-led selector with controlled transitions */
-.re-expertise {background:#082e4c;color:#eff8ff;padding:clamp(100px,10vw,160px) 0 clamp(105px,10vw,160px)}
-.re-expertise .re-section-marker,.re-expertise .re-kicker {color:#97d1f7}
-.re-services-heading-row {display:flex;justify-content:space-between;align-items:end;gap:50px;margin-top:35px}
-.re-services-heading-row h2 {font-size:clamp(49px,5vw,78px);font-weight:530;line-height:1.12;letter-spacing:-.055em;max-width:800px;margin-top:18px}
-.re-services-heading-row>p {max-width:300px;color:#c2d9e8;font-size:16px;line-height:1.8;margin-bottom:8px}
-.re-services-stage {display:grid;grid-template-columns:1fr 1fr;gap:clamp(45px,6vw,110px);margin-top:80px;align-items:center}
-.re-services-list {border-top:1px solid #ffffff55}
-.re-service-choice {width:100%;display:grid;grid-template-columns:38px minmax(0,1fr) 34px;gap:17px;text-align:start;border:0;border-bottom:1px solid #ffffff4b;background:transparent;color:inherit;cursor:pointer;padding:29px 8px 30px;transition:background .25s,padding .25s}
-.re-service-choice:hover,.re-service-choice.is-active {background:#ffffff11;padding-inline:18px}
-.re-service-index {font-size:12px;color:#b0d1e5;font-weight:700;padding-top:6px}
-.re-service-copy {display:flex;flex-direction:column;gap:12px}
-.re-service-copy strong {font-size:clamp(23px,2.15vw,34px);font-weight:540;line-height:1.25;letter-spacing:-.035em}
-.re-service-copy>span {font-size:13px;line-height:1.85;color:#c4d5e1;max-width:450px;opacity:.78}
-.re-service-choice.is-active .re-service-copy>span {opacity:1}
-.re-service-symbol {color:#9bcee9}
-.re-services-visual {min-width:0}
-.re-services-image {height:clamp(360px,38vw,535px);position:relative;border-radius:12px 12px 95px 12px;overflow:hidden;background:#225572;isolation:isolate}
-.re-services-picture {position:absolute;inset:0}
-.re-services-picture img {object-fit:cover}
-.re-services-image:after {content:"";position:absolute;inset:0;background:linear-gradient(0deg,#041a35ad,transparent 40%);pointer-events:none}
-.re-services-photo-mark {position:absolute;inset-inline-start:23px;bottom:20px;z-index:2;font-weight:800;font-size:23px;letter-spacing:-.04em}
-.re-services-photo-mark i {font-size:9px;font-style:normal;letter-spacing:.16em;margin-inline-start:10px}
-.re-services-photo-index {position:absolute;inset-inline-end:23px;bottom:25px;z-index:2;font-size:13px;letter-spacing:.2em}
-.re-services-visual-bottom {display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:23px}
-.re-services-visual-bottom>div:first-child>span {color:#9bc6dc;font-size:10px;letter-spacing:.17em;font-weight:750}
-.re-services-visual-bottom h3 {font-size:24px;font-weight:550;margin-top:8px}
-.re-services-arrows {display:flex;align-items:center;gap:8px}
-.re-services-arrows button {width:42px;height:42px;border:1px solid #ffffff7e;background:transparent;color:inherit;border-radius:50%;cursor:pointer;display:grid;place-items:center;transition:background .2s}
-.re-services-arrows button:hover {background:#ffffff2d}
-.re-services-bottom {margin-top:80px;border-top:1px solid #ffffff50;padding-top:25px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.re-services-bottom>span {font-size:10px;letter-spacing:.15em;color:#c4d8e6}
-.re-services-bottom .re-inline-link {color:#fff}
-
-/* 06 — JOURNEY: luminous architecture lines, refined rather than card grid */
-.re-journey {background:var(--re-surface);padding:clamp(105px,11vw,175px) 0;position:relative;overflow:hidden}
-.re-journey-inner {display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(50px,7vw,120px);position:relative}
-.re-journey-heading {position:relative;z-index:3}
-.re-journey-heading .re-kicker {margin-top:43px;margin-bottom:17px}
-.re-journey h2 {font-size:clamp(51px,5vw,82px);font-weight:550;letter-spacing:-.065em;line-height:1.18}
-.re-journey h2 em {font-style:normal;color:var(--re-accent)}
-.re-journey-lead {max-width:430px;margin-top:30px!important;color:var(--re-muted);font-size:17px;line-height:1.85}
-.re-journey-link {display:inline-flex;gap:25px;align-items:center;border-bottom:1px solid var(--re-accent);padding:14px 0;margin-top:35px;font-weight:700;font-size:13px}
-.re-journey-map {position:absolute;pointer-events:none;top:38%;inset-inline-start:5%;width:490px;height:490px;opacity:.24}
-.re-journey-ring {border:1px solid var(--re-accent);border-radius:50%;position:absolute;inset:0}
-.re-journey-ring.ring-b {inset:16%}
-.re-journey-ring.ring-c {inset:33%}
-.re-journey-point {position:absolute;left:49%;top:49%;width:12px;height:12px;background:var(--re-accent);border-radius:50%;box-shadow:0 0 0 12px #126cb520}
-.re-journey-map-text {position:absolute;top:43%;left:34%;font-size:55px;font-weight:800;letter-spacing:-.1em;color:transparent;-webkit-text-stroke:1px var(--re-accent)}
-.re-journey-list {position:relative;z-index:2;border-top:1px solid var(--re-rule)}
-.re-journey-item {display:grid;grid-template-columns:45px minmax(0,1fr) 22px;align-items:start;gap:22px;padding:32px 0;border-bottom:1px solid var(--re-rule)}
-.re-journey-item>span {font-size:12px;color:var(--re-accent);font-weight:750;padding-top:6px}
-.re-journey-item h3 {font-size:clamp(23px,2.1vw,32px);line-height:1.2;font-weight:600}
-.re-journey-item p {margin-top:13px!important;font-size:14px;line-height:1.85;color:var(--re-muted)}
-.re-journey-item>svg {color:var(--re-accent)}
-
 /* 07 — BRAND STATEMENT: media interlude */
 .re-statement {min-height:470px;display:grid;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:#0b3453;color:#fff;padding:95px 0}
 .re-statement-image,.re-statement-shade {position:absolute;inset:0}
@@ -569,30 +489,10 @@ html[data-theme=dark] .re-home {
 /* 11 — RESPONSIVE */
 @media(max-width:1200px){
  .re-hero h1 {font-size:clamp(64px,7.2vw,98px)}
- .re-intro-art {min-height:570px}
- .re-services-stage {gap:44px}
- .re-journey-map {width:380px;height:380px}
 }
 @media(max-width:1000px){
  .re-hero h1 {font-size:clamp(64px,8vw,91px)}
  .re-hero-side-note {display:none}
- .re-intro-inner {grid-template-columns:1fr 1fr;column-gap:35px}
- .re-intro-art {min-height:510px}
- .re-intro h2 {font-size:clamp(48px,5.4vw,68px)}
- .re-intro-body {padding-inline-start:0}
- .re-services-stage {grid-template-columns:1fr;gap:42px}
- .re-services-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border:0}
- .re-service-choice {display:flex;flex-direction:column;min-height:210px;gap:12px;border:1px solid #ffffff55;border-radius:9px;padding:20px}
- .re-service-choice:hover,.re-service-choice.is-active {padding:20px;border-color:#badff8}
- .re-service-copy strong {font-size:21px}
- .re-service-copy>span {font-size:12px}
- .re-service-symbol {display:none}
- .re-services-image {height:390px}
- .re-journey-inner {grid-template-columns:1fr;gap:65px}
- .re-journey-map {inset-inline-start:auto;inset-inline-end:0;top:15%;width:320px;height:320px}
- .re-journey-list {max-width:750px}
- .re-footer-main {grid-template-columns:1fr 1fr}
- .re-footer-address {grid-column:1/-1}
 }
 @media(max-width:700px){
  .re-shell,.re-header-inner,.re-hero-inner {width:calc(100% - 40px)}
@@ -610,43 +510,8 @@ html[data-theme=dark] .re-home {
  .re-hero-discover,.re-hero-caption {display:none}
  .re-hero-progress {margin-inline-end:6px}
  .re-hero-controls {gap:9px}
- .re-intro {padding:90px 0 110px}
- .re-intro-inner {display:block}
- .re-intro-heading .re-kicker {margin:28px 0 16px}
- .re-intro h2 {font-size:clamp(49px,10.5vw,72px)}
- .re-intro-art {height:340px;min-height:0;margin:40px 0 25px}
- .re-intro-image {inset:0 0 0 5%}
- .re-intro-orbit {width:110px;height:110px;inset-inline-start:-5%;top:-24px}
- .re-intro-body {margin-top:25px;max-width:520px}
- .re-intro-body>p {font-size:15px}
- .re-expertise {padding:95px 0 110px}
- .re-services-heading-row {display:block;margin-top:26px}
- .re-services-heading-row h2 {font-size:clamp(45px,9vw,66px)}
- .re-services-heading-row>p {margin-top:18px;font-size:14px}
- .re-services-stage {margin-top:42px}
- .re-services-list {display:flex;overflow-x:auto;gap:11px;scroll-snap-type:x mandatory;padding-bottom:8px}
- .re-service-choice {flex:0 0 min(76vw,300px);min-height:190px;scroll-snap-align:start;padding:17px}
- .re-service-choice:hover,.re-service-choice.is-active {padding:17px}
- .re-service-copy strong {font-size:20px}
- .re-services-image {height:350px}
- .re-services-visual-bottom h3 {font-size:21px}
- .re-services-bottom {margin-top:50px;display:block}
- .re-services-bottom .re-inline-link {margin-top:14px}
- .re-journey {padding:95px 0 115px}
- .re-journey-inner {gap:46px}
- .re-journey h2 {font-size:clamp(48px,9.4vw,70px)}
- .re-journey-heading .re-kicker {margin-top:30px}
- .re-journey-map {width:250px;height:250px;top:15%;opacity:.12}
- .re-journey-lead {font-size:15px}
- .re-journey-item {grid-template-columns:32px minmax(0,1fr) 20px;gap:13px;padding:27px 0}
- .re-journey-item h3 {font-size:24px}
  .re-statement {min-height:380px;padding:75px 0}
  .re-statement p {font-size:clamp(33px,7.2vw,50px)}
- .re-footer {padding-top:60px}
- .re-footer-main {grid-template-columns:1fr;gap:34px;padding-bottom:50px}
- .re-footer-address {grid-column:auto}
- .re-footer-bottom {align-items:flex-start;flex-wrap:wrap;font-size:10px}
- .re-footer-bottom>span {width:100%}
 }
 @media(max-width:380px){
  .re-hero h1 {font-size:47px}

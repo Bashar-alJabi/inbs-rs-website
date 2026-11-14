@@ -17,9 +17,10 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, new RegExp(`<html[^>]*lang="${locale}"[^>]*dir="${dir}"`));
   assert.match(html, /INBS/);
   assert.match(html, /id="re-hero-title"/);
-  assert.match(html, /id="re-intro-title"/);
-  assert.match(html, /id="re-expertise-title"/);
-  assert.match(html, /id="re-journey-title"/);
+  assert.doesNotMatch(html, /id="re-intro-title"/);
+  assert.doesNotMatch(html, /id="re-expertise-title"/);
+  assert.doesNotMatch(html, /id="re-journey-title"/);
+  assert.match(html, /id="statement"/);
   assert.match(html, /id="re-contact-title"/);
   assert.match(html, /inbs-editorial-cta--home/);
   assert.match(html, /inbs-editorial-cta-primary/);
@@ -63,7 +64,7 @@ for (const name of ['hero-01', 'hero-02', 'hero-03', 'story-04', 'story-05',
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
   assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
 }
-for (const image of ['pexels-villa', 'pexels-dubai', 'pexels-interior', 'pexels-residence']) {
+for (const image of ['hero-01-residence', 'hero-02-dubai-skyline', 'hero-03-interior', 'home-villa-exterior']) {
   const response = await expectStatus(`/images/home/${image}.webp`, 200);
   assert.match(response.headers.get('content-type') || '', /image\/webp/i);
   const bytes = Buffer.from(await response.arrayBuffer());

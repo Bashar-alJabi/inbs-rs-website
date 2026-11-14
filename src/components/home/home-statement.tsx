@@ -6,8 +6,8 @@ import { homeContent } from '@/content/home';
 export function HomeStatement({ locale }: { locale: Locale }) {
   const t = homeContent[locale];
   return (
-    <section className="re-statement" aria-label={t.quote}>
-      <div className="re-statement-image" aria-hidden="true"><Image src="/images/home/pexels-dubai.webp" fill alt="" sizes="100vw"/></div>
+    <section className="re-statement" id="statement" aria-label={t.quote}>
+      <div className="re-statement-image" aria-hidden="true"><Image src="/images/home/hero-02-dubai-skyline.webp" fill alt="" sizes="100vw"/></div>
       <div className="re-statement-shade" aria-hidden="true"/>
       <Reveal className="re-shell re-statement-content">
         <span className="re-statement-eyebrow">INBS / DUBAI</span>
