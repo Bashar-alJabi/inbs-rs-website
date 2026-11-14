@@ -236,22 +236,9 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 .re-statement p {font-size:clamp(35px,4vw,63px);line-height:1.28;font-weight:450;letter-spacing:-.05em;margin:25px auto 27px!important}
 .re-statement-signature {font-size:11px;letter-spacing:.14em;color:#bddbf0}
 
-/* 08 — CONTACT CTA */
-.re-contact {background:linear-gradient(120deg,#07345a,#0c558c 85%);padding:clamp(105px,11vw,170px) 0;position:relative;overflow:hidden;color:#fff;isolation:isolate}
-.re-contact:before {content:"";position:absolute;inset-inline-end:-260px;top:-180px;width:720px;height:720px;border:1px solid #ffffff28;border-radius:50%;box-shadow:0 0 0 100px #ffffff07,0 0 0 200px #ffffff06;pointer-events:none}
-.re-contact-inner {position:relative;display:grid;grid-template-columns:1.3fr .7fr;align-items:end;gap:70px}
-.re-contact .re-section-heading-top {display:flex;align-items:center;gap:30px;color:#bfe3f8;font-size:10px;letter-spacing:.13em}
-.re-contact .re-section-number span {color:#9cc8e5}
-.re-contact h2 {font-size:clamp(61px,7vw,108px);line-height:1.08;letter-spacing:-.065em;font-weight:550;margin-top:30px}
-.re-contact h2 em {font-weight:470;font-style:normal;color:#acd9f7}
-.re-contact-aside {position:relative;z-index:2;padding-bottom:6px}
-.re-contact-aside>p {font-size:16px;line-height:1.9;color:#d3e9f8;margin-bottom:34px}
-.re-contact-primary {display:flex;align-items:center;justify-content:space-between;gap:20px;background:#f1f9ff;color:#083451;padding:19px 23px;border-radius:var(--radius-button,7px);font-size:14px;font-weight:750;transition:background .25s,transform .25s}
-.re-contact-primary:hover {background:#c8e9fc;transform:translateY(-2px)}
-.re-contact-phone {display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #ffffffa0;padding:22px 0 13px;font-size:13px;color:#e9f7ff}
-.re-contact-circle {display:none}
+/* 08 — CTA presentation comes from shared editorial-cta.css. */
 
-/* 09 — FOOTER: rules transferred from the current original INBS website. */
+/* 09 — Footer: original INBS rules, including responsive breakpoints and dark mode. */
 .inbs-footer{position:relative;background:#082c49;color:white;border-radius:35px 35px 0 0;padding-top:90px;margin-top:0}
 
 .inbs-footer-top{display:flex;align-items:end;justify-content:space-between;gap:30px;border-bottom:1px solid #ffffff3b;padding-bottom:58px}
@@ -283,26 +270,25 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 .inbs-footer-bottom>div{display:flex;gap:20px}
 
 @media(max-width:760px) {
-.inbs-footer-top{flex-direction:column;align-items:start}
+  .inbs-footer-top{flex-direction:column;align-items:start}
 }
 
 @media(max-width:760px) {
-.inbs-footer-grid{grid-template-columns:1fr 1fr}
+  .inbs-footer-grid{grid-template-columns:1fr 1fr}
 }
 
 @media(max-width:760px) {
-.inbs-footer-about{grid-column:1/-1}
+  .inbs-footer-about{grid-column:1/-1}
 }
 
 @media(max-width:520px) {
-.inbs-footer-grid{grid-template-columns:1fr}
+  .inbs-footer-grid{grid-template-columns:1fr}
 }
 
 @media(max-width:520px) {
-.inbs-footer-bottom{flex-wrap:wrap}
+  .inbs-footer-bottom{flex-wrap:wrap}
 }
 
-/* Unified controls and typography are defined in tokens.css */
 .inbs-contact-button,.inbs-hero-cta,.inbs-footer-top>a{border-radius:var(--radius-button)}
 
 .inbs-contact-button,.inbs-footer-top>a{font-size:var(--font-size-button)}
@@ -362,32 +348,31 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 .inbs-copyright{white-space:normal;gap:6px;flex-wrap:wrap}
 
 @media(max-width:850px) {
-.inbs-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+  .inbs-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
 }
 
 @media(max-width:850px) {
-.inbs-footer-about{grid-column:auto}
+  .inbs-footer-about{grid-column:auto}
 }
 
 @media(max-width:560px) {
-.inbs-footer-grid{grid-template-columns:1fr}
+  .inbs-footer-grid{grid-template-columns:1fr}
 }
 
 @media(max-width:560px) {
-.inbs-footer-top{padding-bottom:50px}
+  .inbs-footer-top{padding-bottom:50px}
 }
 
 @media(max-width:560px) {
-.inbs-footer{border-radius:26px 26px 0 0}
+  .inbs-footer{border-radius:26px 26px 0 0}
 }
 
 .inbs-footer-grid h3{font-size:clamp(15px,1.2vw,18px);letter-spacing:.045em;font-weight:700;line-height:1.45}
 
 @media(max-width:760px) {
-.inbs-footer-grid>div{justify-self:stretch}
+  .inbs-footer-grid>div{justify-self:stretch}
 }
 
-/* Subtle brand signature brought over from the retired final homepage CTA. */
 .inbs-footer{overflow:hidden}
 
 .inbs-footer-watermark{position:absolute;top:-.06em;inset-inline-end:-.035em;z-index:0;pointer-events:none;user-select:none;font-size:clamp(180px,27vw,490px);font-weight:800;line-height:1;letter-spacing:-.13em;color:#d4ecff0b;white-space:nowrap}
@@ -396,29 +381,102 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 
 [dir=rtl] .inbs-footer-watermark{letter-spacing:0}
 
-/* Preserve previous INBS signature; move only the orbital accent to bottom-right. */
 .inbs-footer-glow:before{top:auto;bottom:-350px}
 
 @media(max-width:760px) {
-.inbs-footer-glow:before{top:auto;bottom:-350px}
+  .inbs-footer-glow:before{top:auto;bottom:-350px}
 }
 
-/* Footer ornament proportions: smaller signature, more recessed orbital accent. */
 .inbs-footer-watermark{font-size:clamp(155px,23vw,410px);letter-spacing:0;inset-inline-end:clamp(14px,4vw,64px)}
 
 .inbs-footer-glow:before{inset-inline-end:-470px;bottom:-490px;top:auto}
 
 @media(max-width:760px) {
-.inbs-footer-watermark{font-size:clamp(105px,21vw,190px);letter-spacing:0;inset-inline-end:14px}
+  .inbs-footer-watermark{font-size:clamp(105px,21vw,190px);letter-spacing:0;inset-inline-end:14px}
 }
 
 @media(max-width:760px) {
-.inbs-footer-glow:before{inset-inline-end:-510px;bottom:-490px;top:auto}
+  .inbs-footer-glow:before{inset-inline-end:-510px;bottom:-490px;top:auto}
+}
+
+@media(min-width:761px) {
+  .inbs-footer-watermark{font-size:clamp(125px,18vw,310px);letter-spacing:-.055em}
+}
+
+@media(min-width:761px) {
+  .inbs-footer-watermark{top:55px}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-top,.inbs-footer-grid,.inbs-footer-about,.inbs-footer-contact>a,.inbs-footer-contact>h3,.inbs-footer-bottom{text-align:start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-top{align-items:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-top>a{align-self:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-grid a{justify-content:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about{display:flex;flex-direction:column;align-items:flex-start;text-align:start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about img{display:block;margin-inline:0}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-about p{margin-inline:0}
+}
+
+@media(max-width:760px) {
+  .inbs-socials{justify-content:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-grid .inbs-socials a{display:grid;place-items:center;justify-content:center;align-items:center;flex:0 0 40px;width:40px;height:40px;padding:0}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a{display:flex;justify-content:flex-start;align-items:flex-start;gap:11px;line-height:1.65}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a>svg{flex:0 0 18px;margin-top:3px}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a>span{flex:1;min-width:0}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-contact>a>.inbs-phone-number{flex:0 0 auto}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-bottom{justify-content:space-between}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-bottom>div{margin-inline-start:0;justify-content:flex-start}
+}
+
+@media(max-width:760px) {
+  .inbs-footer-watermark{top:clamp(295px,38vh,405px);left:auto;right:auto;inset-inline-start:14px;inset-inline-end:auto;transform:none;text-align:start}
+}
+
+@media(max-width:760px) {
+  [dir=rtl] .inbs-footer-watermark{left:auto;right:auto;inset-inline-start:14px;inset-inline-end:auto;transform:none}
 }
 
 .inbs-footer{position:relative;z-index:2;background:radial-gradient(ellipse 75% 75% at 5% 5%,#126cb555 0%,transparent 65%),linear-gradient(135deg,var(--brand-blue) 0%,var(--brand-deep) 54%,#042448 100%)}
 
-/* Dark footer: continue the neutral navy surfaces without the vivid blue opening. */
 html[data-theme=dark] .inbs-footer{
  background:
   radial-gradient(ellipse 72% 85% at 8% 0%,rgba(38,82,119,.28) 0%,transparent 70%),
@@ -433,7 +491,10 @@ html[data-theme=dark] .inbs-footer-glow:before{
 
 html[data-theme=dark] .inbs-footer-watermark{color:#d4ecff09}
 
-/* The directory CTA is an action, not a sixth service listing. */
+@media (min-width:1151px) {
+  .inbs-footer-top p{font-size:14px}
+}
+
 .inbs-footer-grid a.inbs-footer-more-services{
   display:inline-flex;
   width:fit-content;
@@ -460,12 +521,12 @@ html[data-theme=dark] .inbs-footer-watermark{color:#d4ecff09}
 [dir=rtl] .inbs-footer-more-services:hover svg{transform:translate(-2px,-2px)}
 
 @media(prefers-reduced-motion:reduce) {
-.inbs-footer-grid a.inbs-footer-more-services,
+  .inbs-footer-grid a.inbs-footer-more-services,
   .inbs-footer-more-services svg{transition:none}
 }
 
 @media(prefers-reduced-motion:reduce) {
-.inbs-footer-more-services:hover svg{transform:none}
+  .inbs-footer-more-services:hover svg{transform:none}
 }
 
 /* 10 — RTL AND THEMES */
@@ -506,8 +567,6 @@ html[data-theme=dark] .re-home {
  .re-journey-inner {grid-template-columns:1fr;gap:65px}
  .re-journey-map {inset-inline-start:auto;inset-inline-end:0;top:15%;width:320px;height:320px}
  .re-journey-list {max-width:750px}
- .re-contact-inner {grid-template-columns:1fr;gap:45px}
- .re-contact-aside {max-width:550px}
  .re-footer-main {grid-template-columns:1fr 1fr}
  .re-footer-address {grid-column:1/-1}
 }
@@ -559,9 +618,6 @@ html[data-theme=dark] .re-home {
  .re-journey-item h3 {font-size:24px}
  .re-statement {min-height:380px;padding:75px 0}
  .re-statement p {font-size:clamp(33px,7.2vw,50px)}
- .re-contact {padding:94px 0 110px}
- .re-contact h2 {font-size:clamp(54px,10.8vw,75px)}
- .re-contact-aside>p {font-size:15px}
  .re-footer {padding-top:60px}
  .re-footer-main {grid-template-columns:1fr;gap:34px;padding-bottom:50px}
  .re-footer-address {grid-column:auto}
@@ -576,4 +632,9 @@ html[data-theme=dark] .re-home {
 @media(prefers-reduced-motion:reduce){
  .re-home * {animation-duration:.01ms!important;transition-duration:.01ms!important}
  .re-hero-architecture span {animation:none}
+}
+
+/* Shared footer handoff: only pages with a final editorial CTA overlap the rounded footer. */
+main:has(> .inbs-editorial-cta:last-child) + .inbs-footer {
+  margin-top: -24px;
 }
