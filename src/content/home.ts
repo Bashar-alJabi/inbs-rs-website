@@ -1,19 +1,6 @@
-/** Bilingual copy. UI components own presentation, never editorial content. */
+/** Approved bilingual Home content; other sections will be designed individually. */
 export const homeContent = {
   en: {
-    nav: { philosophy: 'Our approach', expertise: 'What we do', process: 'The journey', contact: 'Get in touch' },
-    menu: 'Explore',
-    kicker: 'INBS / REAL ESTATE / DUBAI',
-    eyebrow: 'A MORE PERSONAL PERSPECTIVE ON REAL ESTATE',
-    titleFirst: 'Spaces shape',
-    titleSecond: 'the way we',
-    titleAccent: 'live.',
-    description: 'Every property decision begins with a vision. We bring clarity, care and local perspective to the moments that matter.',
-    heroCta: 'Begin a conversation',
-    scroll: 'SCROLL TO DISCOVER',
-    location: 'BASED IN DUBAI · UAE',
-    visualNote: 'A NEW PERSPECTIVE',
-    chapter: '01 / 04',
     offerings: [
       { number: '01', name: 'Property brokerage', description: 'Guidance through buying and selling conversations, with your priorities at the centre.' },
       { number: '02', name: 'Real estate consultation', description: 'Clear, informed perspectives to help you weigh opportunities and make confident decisions.' },
@@ -26,25 +13,8 @@ export const homeContent = {
     ctaBody: 'Whether you are exploring a move or weighing a property decision, we are here to talk it through.',
     email: 'Write to us',
     call: 'Give us a call',
-    footerLine: 'REAL ESTATE, WITH A HUMAN PERSPECTIVE.',
-    backTop: 'Back to top',
-    rights: 'All rights reserved.',
-    parent: 'INBS Business Services',
   },
   ar: {
-    nav: { philosophy: 'نهجنا', expertise: 'ماذا نقدم', process: 'رحلتك معنا', contact: 'تواصل معنا' },
-    menu: 'استكشف',
-    kicker: 'INBS / العقارات / دبي',
-    eyebrow: 'رؤية مختلفة لتجربة عقارية أكثر خصوصية',
-    titleFirst: 'مساحات تصنع',
-    titleSecond: 'أسلوب',
-    titleAccent: 'حياتنا.',
-    description: 'كل قرار عقاري يبدأ برؤية. نرافقك بفهم ووضوح وخبرة محلية في الخطوات التي تصنع الفرق.',
-    heroCta: 'لنبدأ الحديث',
-    scroll: 'اكتشف المزيد',
-    location: 'من دبي · الإمارات العربية المتحدة',
-    visualNote: 'رؤية من منظور آخر',
-    chapter: '01 / 04',
     offerings: [
       { number: '01', name: 'الوساطة العقارية', description: 'نساعدك في خطوات الشراء والبيع مع وضع أولوياتك في صميم كل قرار.' },
       { number: '02', name: 'الاستشارات العقارية', description: 'رؤية واضحة ومدروسة لمساعدتك في تقييم الفرص واتخاذ القرار بثقة.' },
@@ -57,10 +27,5 @@ export const homeContent = {
     ctaBody: 'سواء كنت تخطط للانتقال أو تفكر بقرار عقاري، نحن هنا لنناقش خياراتك.',
     email: 'راسلنا',
     call: 'اتصل بنا',
-    footerLine: 'العقارات، برؤية أقرب للإنسان.',
-    backTop: 'العودة للأعلى',
-    rights: 'جميع الحقوق محفوظة.',
-    parent: 'INBS لخدمات رجال الأعمال',
   },
 } as const;
-

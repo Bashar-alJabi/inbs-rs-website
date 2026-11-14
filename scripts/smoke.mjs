@@ -16,7 +16,8 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   const html = await response.text();
   assert.match(html, new RegExp(`<html[^>]*lang="${locale}"[^>]*dir="${dir}"`));
   assert.match(html, /INBS/);
-  assert.match(html, /id="re-hero-title"/);
+  assert.doesNotMatch(html, /id="re-hero-title"/);
+  assert.doesNotMatch(html, /aria-roledescription="slideshow"/);
   assert.doesNotMatch(html, /id="re-intro-title"/);
   assert.doesNotMatch(html, /id="re-expertise-title"/);
   assert.doesNotMatch(html, /id="re-journey-title"/);
@@ -38,7 +39,7 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /info@inbsrealestate\.com/);
   assert.match(html, locale === 'ar' ? /حيث تجد الفرص عنوانها/ : /Where possibilities find an address/);
 
-  assert.match(html, /hero-01-residence\.webp/);
+  assert.match(html, /statement-dubai-skyline\.webp/);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/);
   assert.match(html, /\/brand\/inbs-logo\.png/);
   assert.match(response.headers.get('x-content-type-options') || '', /nosniff/);
@@ -64,7 +65,7 @@ for (const name of ['hero-01', 'hero-02', 'hero-03', 'story-04', 'story-05',
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
   assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
 }
-for (const image of ['hero-01-residence', 'hero-02-dubai-skyline', 'hero-03-interior', 'home-villa-exterior']) {
+for (const image of ['statement-dubai-skyline']) {
   const response = await expectStatus(`/images/home/${image}.webp`, 200);
   assert.match(response.headers.get('content-type') || '', /image\/webp/i);
   const bytes = Buffer.from(await response.arrayBuffer());

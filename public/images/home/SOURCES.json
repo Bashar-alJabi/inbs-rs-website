@@ -1,26 +1,8 @@
 [
   {
-    "file": "home-villa-exterior.webp",
-    "photographer": "Ahmet ÇÖTÜR",
-    "source": "https://www.pexels.com/photo/modern-luxury-villa-with-infinity-pool-31817156/",
-    "purpose": "Illustrative residential exterior, not an INBS listing"
-  },
-  {
-    "file": "hero-02-dubai-skyline.webp",
+    "file": "statement-dubai-skyline.webp",
     "photographer": "Kate Trysh",
     "source": "https://www.pexels.com/photo/modern-architectural-skyline-in-downtown-dubai-28469864/",
-    "purpose": "Dubai urban architecture"
-  },
-  {
-    "file": "hero-03-interior.webp",
-    "photographer": "Max Vakhtbovych",
-    "source": "https://www.pexels.com/photo/interior-of-modern-mansion-with-stairway-7031403/",
-    "purpose": "Illustrative architectural interior, not an INBS listing"
-  },
-  {
-    "file": "hero-01-residence.webp",
-    "photographer": "aksinfo7 universe",
-    "source": "https://www.pexels.com/photo/modern-luxury-villa-with-pool-exterior-at-twilight-30781823/",
-    "purpose": "Illustrative residential exterior, not an INBS listing"
+    "purpose": "Illustrative Dubai skyline for the Home statement section"
   }
 ]

@@ -1,6 +1,5 @@
 /* INBS REAL ESTATE — HOME
-   Single page stylesheet: foundation / header / hero / approach / services /
-   journey / editorial statement / CTA / footer / responsive / themes.
+   Single page stylesheet: foundation / header / editorial statement / CTA / footer / responsive / themes.
    Component markup lives in src/components, copy in src/content. */
 
 /* 01 — FOUNDATION */
@@ -11,18 +10,11 @@
   background:var(--re-paper);color:var(--re-ink);overflow:clip;isolation:isolate;
 }
 .re-home * {box-sizing:border-box}
-.re-home h1,.re-home h2,.re-home h3,.re-home p {margin:0}
 .re-home a {text-decoration:none}
 .re-home button {font-family:inherit}
 .re-home section[id] {scroll-margin-top:92px}
 .re-home :where(button,a):focus-visible {outline:3px solid #a1d6ff;outline-offset:4px}
 .re-shell {width:min(100% - 104px,1320px);margin-inline:auto}
-.re-kicker {font-size:12px;letter-spacing:.16em;font-weight:750;line-height:1.7;color:var(--re-accent)}
-.re-section-marker {display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.17em;font-weight:700;color:var(--re-accent)}
-.re-marker-line {width:30px;height:1px;background:currentColor}
-.re-inline-link {display:inline-flex;align-items:center;justify-content:space-between;gap:34px;padding:14px 2px;border-bottom:1px solid currentColor;font-size:13px;font-weight:750}
-.re-inline-link svg {transition:transform .3s}
-.re-inline-link:hover svg {transform:translate(3px,-3px)}
 
 /* 02 — NAVIGATION: mirrored from main INBS header/drawer, with architectural signal */
 .inbs-header {position:fixed;top:0;left:0;right:0;z-index:70;transition:background .45s ease,box-shadow .45s ease,color .45s ease}
@@ -102,48 +94,6 @@ html[data-theme=dark] .inbs-drawer-architecture-end {fill:#85c6f5}
  .inbs-drawer nav a{min-height:42px;padding:9px 12px;font-size:15px}
  .inbs-drawer-bottom{padding-top:8px}
 }
-
-/* 03 — HERO: cinematic, but preserves parent INBS controls and motion approach */
-.re-hero {position:relative;height:min(920px,100svh);min-height:730px;background:#0a304e;color:#fff;isolation:isolate;overflow:hidden}
-.re-hero-media,.re-hero-photo,.re-hero-shade {position:absolute;inset:0}
-.re-hero-media {z-index:-3}
-.re-hero-photo img {object-fit:cover;object-position:center 54%}
-.re-hero-shade {z-index:-2;background:linear-gradient(90deg,#031b34ed 0%,#073355cf 36%,#07365777 69%,#061b2f83 100%),linear-gradient(0deg,#031629e8 0%,transparent 35%,#06243bb0 100%)}
-html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#073355cf 36%,#07365777 69%,#061b2f83 100%),linear-gradient(0deg,#031629e8 0%,transparent 35%,#06243bb0 100%)}
-.re-hero-architecture {position:absolute;inset-inline-end:-115px;top:17%;height:65%;width:min(49vw,710px);z-index:-1;pointer-events:none}
-.re-hero-architecture span {position:absolute;inset:0;border:1px solid #c8edff35;border-radius:50%;animation:re-breathe 14s ease-in-out infinite}
-.re-hero-architecture span:nth-child(2) {inset:11% 10%;animation-delay:-4s}
-.re-hero-architecture span:nth-child(3) {inset:22% 20%;animation-delay:-8s}
-@keyframes re-breathe {50%{transform:scale(1.035);opacity:.45}}
-.re-hero-inner {width:min(100% - 104px,1320px);height:100%;margin-inline:auto;display:flex;flex-direction:column;justify-content:space-between;padding-top:124px}
-.re-hero-topline {display:flex;align-items:center;gap:15px;font-size:10px;font-weight:700;letter-spacing:.17em;color:#d9edf9}
-.re-kicker-line {width:32px;height:1px;background:#b3dffa}
-.re-hero-separator {color:#9bc9e9;padding-inline:6px}
-.re-hero-region {margin-inline-start:auto;font-weight:600;color:#c3deee}
-.re-hero-stage {position:relative;display:flex;align-items:center;justify-content:space-between;flex:1;padding:35px 0 55px}
-.re-hero-content {max-width:880px;min-width:0}
-.re-hero-eyebrow {font-size:12px;font-weight:700;letter-spacing:.17em;color:#a7daff;margin:0 0 23px!important}
-.re-hero h1 {font-weight:590;font-size:clamp(66px,6.8vw,108px);line-height:1.065;letter-spacing:-.065em;max-width:1050px}
-.re-hero h1 span,.re-hero h1 em {display:block}
-.re-hero h1 em {font-style:normal;color:#9ad0f2;font-weight:540}
-.re-hero-description {max-width:530px;font-size:clamp(15px,1.2vw,18px);line-height:1.78;color:#e0edf6;margin-top:25px!important}
-.re-hero-cta {display:inline-flex;gap:30px;align-items:center;background:#fff;color:#083353;padding:16px 21px;border-radius:var(--radius-button,7px);font-size:13px;font-weight:750;margin-top:31px;transition:background .25s,transform .25s}
-.re-hero-cta:hover {background:#c8eafb;transform:translateY(-2px)}
-.re-hero-side-note {align-self:flex-end;display:flex;gap:11px;align-items:center;writing-mode:vertical-rl;font-size:10px;letter-spacing:.22em;color:#b8dcef}
-.re-hero-side-line {height:70px;width:1px;background:#b8dcef}
-.re-hero-bottom {border-top:1px solid #ffffff80;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px 0 25px}
-.re-hero-controls {display:flex;align-items:center;gap:12px}
-.re-hero-count {font-size:13px;letter-spacing:.13em;font-weight:750;white-space:nowrap;margin-inline-end:10px}
-.re-hero-count i {font-style:normal;color:#ffffff85;padding:0 5px}
-.re-hero-progress {display:flex;align-items:center;gap:7px;margin-inline-end:17px}
-.re-hero-progress button {width:21px;height:12px;border:0;background:transparent;cursor:pointer;position:relative;padding:0}
-.re-hero-progress button:before {content:"";position:absolute;inset-inline:0;top:5px;height:2px;background:#ffffff70;transition:background .2s}
-.re-hero-progress button.is-current:before {background:#c5eaff}
-.re-hero-control {border:1px solid #ffffff83;color:#fff;background:#ffffff08;border-radius:50%;height:34px;width:34px;display:grid;place-items:center;cursor:pointer;transition:background .2s}
-.re-hero-control:hover {background:#ffffff30}
-.re-hero-discover {display:inline-flex;align-items:center;gap:17px;font-size:11px;letter-spacing:.13em;font-weight:700}
-.re-hero-discover svg {border:1px solid #ffffff78;border-radius:50%;width:36px;height:36px;padding:9px}
-.re-hero-caption {font-size:10px;letter-spacing:.16em;font-weight:650;color:#d1e9f7}
 
 /* 07 — BRAND STATEMENT: media interlude */
 .re-statement {min-height:470px;display:grid;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:#0b3453;color:#fff;padding:95px 0}
@@ -474,11 +424,8 @@ html[data-theme=dark] .inbs-footer-skyline{opacity:.2}
 }
 
 /* 10 — RTL AND THEMES */
-html[dir=rtl] .re-home h1,html[dir=rtl] .re-home h2,html[dir=rtl] .re-home h3 {letter-spacing:0}
-html[dir=rtl] .re-kicker,html[dir=rtl] .re-section-marker,html[dir=rtl] .re-hero-topline,html[dir=rtl] .re-hero-bottom {letter-spacing:0}
-html[dir=rtl] .re-hero-description {max-width:590px}
+html[dir=rtl] .re-statement p {letter-spacing:0}
 html[dir=rtl] .re-service-choice {text-align:right}
-html[dir=rtl] .re-hero-control svg {transform:scaleX(-1)}
 html[data-theme=dark] .re-home {
   --re-paper:#0e2333;--re-white:#163a54;--re-ink:#e9f5fc;--re-muted:#b0c9d9;--re-rule:#355773;--re-accent:#9fd6f8;--re-sky:#a6ddff;--re-surface:#132d41;--re-panel:#183e59;
 }
@@ -487,41 +434,15 @@ html[data-theme=dark] .re-home {
 }
 
 /* 11 — RESPONSIVE */
-@media(max-width:1200px){
- .re-hero h1 {font-size:clamp(64px,7.2vw,98px)}
-}
-@media(max-width:1000px){
- .re-hero h1 {font-size:clamp(64px,8vw,91px)}
- .re-hero-side-note {display:none}
-}
+
+
 @media(max-width:700px){
  .re-shell,.re-header-inner,.re-hero-inner {width:calc(100% - 40px)}
- .re-hero {height:auto;min-height:740px;min-height:100svh}
- .re-hero-inner {padding-top:105px;min-height:740px;min-height:100svh}
- .re-hero-region {display:none}
- .re-hero-topline {font-size:9px}
- .re-hero-stage {padding:65px 0 35px}
- .re-hero h1 {font-size:clamp(53px,11.5vw,82px);letter-spacing:-.06em}
- .re-hero-eyebrow {font-size:10px;margin-bottom:18px!important}
- .re-hero-description {font-size:14px;line-height:1.8;margin-top:20px!important}
- .re-hero-cta {margin-top:24px;padding:15px 17px}
- .re-hero-architecture {width:75vw;top:20%;inset-inline-end:-28vw}
- .re-hero-bottom {padding:16px 0 20px}
- .re-hero-discover,.re-hero-caption {display:none}
- .re-hero-progress {margin-inline-end:6px}
- .re-hero-controls {gap:9px}
  .re-statement {min-height:380px;padding:75px 0}
  .re-statement p {font-size:clamp(33px,7.2vw,50px)}
 }
-@media(max-width:380px){
- .re-hero h1 {font-size:47px}
- .re-hero-count {margin-inline-end:0}
- .re-hero-progress {display:none}
-}
-@media(prefers-reduced-motion:reduce){
- .re-home * {animation-duration:.01ms!important;transition-duration:.01ms!important}
- .re-hero-architecture span {animation:none}
-}
+
+
 
 /* Shared footer handoff: only pages with a final editorial CTA overlap the rounded footer. */
 main:has(> .inbs-editorial-cta:last-child) + .inbs-footer {
