@@ -35,7 +35,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               <p>{t.footerBrand}</p>
               <h2>{t.footerHeading}</h2>
             </div>
-            <Link href={`${routes.home(locale)}#contact`}>{t.contact}<ArrowUpRight size={20} aria-hidden="true" /></Link>
+            <Link href={routes.page(locale, 'contact')}>{t.contact}<ArrowUpRight size={20} aria-hidden="true" /></Link>
           </div>
         </Reveal>
         <div className="inbs-footer-grid">

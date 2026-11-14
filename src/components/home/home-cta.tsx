@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Reveal } from '@/components/shared/reveal';
 import { homeContent } from '@/content/home';
-import { companyContact } from '@/content/contact';
+import { routes } from '@/lib/routes';
 import type { Locale } from '@/lib/site';
 
 /** Page-owned bilingual content; shared CTA design is in styles/editorial-cta.css. */
@@ -16,12 +17,12 @@ export function HomeCta({ locale }: { locale: Locale }) {
         </Reveal>
         <Reveal className="inbs-editorial-cta-body" delay={0.12}>
           <p>{t.ctaBody}</p>
-          <a className="inbs-editorial-cta-action inbs-editorial-cta-primary" href={companyContact.emails[0].href}>
-            {t.email}<ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-          <a className="inbs-editorial-cta-action inbs-editorial-cta-secondary" href={companyContact.phones[0].href}>
-            {t.call}<ArrowUpRight size={20} aria-hidden="true" />
-          </a>
+          <Link className="inbs-editorial-cta-action inbs-editorial-cta-primary" href={routes.page(locale, 'what-we-do')}>
+            {t.explore}<ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
+          <Link className="inbs-editorial-cta-action inbs-editorial-cta-secondary" href={routes.page(locale, 'contact')}>
+            {t.contact}<ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
         </Reveal>
       </div>
     </section>
