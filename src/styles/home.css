@@ -251,20 +251,9 @@ html[dir=rtl] .re-hero-shade {background:linear-gradient(270deg,#031b34ee 0%,#07
 .re-contact-phone {display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #ffffffa0;padding:22px 0 13px;font-size:13px;color:#e9f7ff}
 .re-contact-circle {display:none}
 
-/* 09 — FOOTER */
-.re-footer {background:#082b46;color:#e8f5fd;padding:83px 0 26px}
-.re-footer-main {display:grid;grid-template-columns:1.2fr .9fr .85fr;gap:clamp(30px,5vw,90px);padding-bottom:65px}
-.re-footer-brand img {width:145px;height:auto;object-fit:contain;filter:brightness(0) invert(1)}
-.re-footer-brand p {font-size:10px;letter-spacing:.15em;color:#b5d5e8;margin-top:15px}
-.re-footer-links {display:grid;grid-template-columns:1fr 1fr;gap:17px 24px;align-content:start;padding-top:13px}
-.re-footer-links a {font-size:13px;line-height:1.5}
-.re-footer-links a:hover,.re-footer-address a:hover {color:#a9def9}
-.re-footer-address {display:flex;align-items:start;gap:14px;font-size:13px;color:#c3dce9;line-height:1.9;padding-top:12px}
-.re-footer-address svg {flex-shrink:0;margin-top:4px}
-.re-footer-bottom {border-top:1px solid #ffffff40;padding-top:25px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:11px;color:#afcbde}
-.re-footer-social {display:flex;align-items:center;gap:18px}
-.re-footer-social a {display:inline-flex;align-items:center;gap:7px}
-.re-footer-social a>span {display:inline-grid;place-items:center;border:1px solid #ffffff5e;width:28px;height:28px;border-radius:50%;font-size:11px;font-weight:800}
+/* 09 — FOOTER: original INBS design values and mobile/dark refinements preserved. */
+
+/* Keep the approved real-estate brand identification beside the original logo. */
 
 /* 10 — RTL AND THEMES */
 html[dir=rtl] .re-home h1,html[dir=rtl] .re-home h2,html[dir=rtl] .re-home h3 {letter-spacing:0}
