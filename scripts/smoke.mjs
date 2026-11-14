@@ -27,6 +27,8 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /class="inbs-footer"/);
   assert.match(html, /class="inbs-footer-grid"/);
   assert.match(html, /class="inbs-footer-watermark"/);
+  assert.match(html, /class="inbs-footer-skyline"/);
+  assert.doesNotMatch(html, /class="inbs-footer-glow"/);
   assert.match(html, new RegExp(`href="/${locale}/legal"`));
   assert.match(html, locale === 'ar' ? /المعلومات القانونية/ : /Legal Information/);
   assert.match(html, locale === 'ar' ? /ماذا نقدم/ : /What We Do/);

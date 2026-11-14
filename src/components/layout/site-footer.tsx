@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, AtSign, Mail, MapPin, Phone, Smartphone } from 'lucide-react';
 import { LinkedinIcon, InstagramIcon, FacebookIcon } from './social-icons';
+import { FooterSkyline } from './footer-skyline';
 import { type Locale } from '@/lib/site';
 import { footerQuickPages, footerLegalPages } from '@/content/navigation';
 import { routes } from '@/lib/routes';
@@ -25,7 +26,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
 
   return (
     <footer className="inbs-footer">
-      <div className="inbs-footer-glow" aria-hidden="true" />
+      <FooterSkyline />
       <span className="inbs-footer-watermark" aria-hidden="true">INBS</span>
       <div className="site-shell inbs-footer-container">
         <Reveal>
