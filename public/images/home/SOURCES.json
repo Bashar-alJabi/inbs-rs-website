@@ -9,6 +9,12 @@
     "file": "statement-luxury-villa.webp",
     "photographer": "Ahmet ÇÖTÜR",
     "source": "https://www.pexels.com/photo/modern-luxury-villa-with-infinity-pool-31817156/",
-    "purpose": "Illustrative luxury residence used behind the Home statement; not an INBS property listing"
+    "purpose": "Illustrative luxury villa retained for future Home use; not an INBS listing"
+  },
+  {
+    "file": "statement-dubai-luxury-penthouse.webp",
+    "creator": "AI-generated for INBS Real Estate",
+    "source": "OpenAI image generation",
+    "purpose": "Dreamlike luxury Dubai penthouse terrace image for the Home quote; illustrative and not a real INBS listing"
   }
 ]
