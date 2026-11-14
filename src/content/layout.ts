@@ -9,7 +9,7 @@ export const layoutContent = {
     footerHeading: 'Where possibilities find an address.',
     footerAbout: 'Part of International Network Businessmen Services, established in Dubai in 2003, INBS Real Estate offers thoughtful property brokerage, consultation and transaction assistance.',
     quickLinks: 'Quick links', services: 'Services', moreServices: 'Explore our services',
-    contactDetails: 'Contact details', socialMedia: 'Social media', rights: 'All rights reserved.',
+    contactDetails: 'Contact details', socialMedia: 'Social media', rights: 'All rights reserved.', legal: 'Legal',
   },
   ar: {
     home: 'الرئيسية', contact: 'تواصل معنا',
@@ -20,6 +20,6 @@ export const layoutContent = {
     footerHeading: 'حيث تجد الفرص عنوانها.',
     footerAbout: 'انطلاقًا من خبرة الشبكة العالمية لخدمات رجال الأعمال، التي تأسست في دبي عام 2003، تقدم INBS للعقارات خدمات الوساطة والاستشارات العقارية والمساعدة في المعاملات بنهج مدروس وشخصي.',
     quickLinks: 'روابط مهمة', services: 'خدماتنا', moreServices: 'استكشف خدماتنا',
-    contactDetails: 'تفاصيل التواصل', socialMedia: 'وسائل التواصل الاجتماعي', rights: 'جميع الحقوق محفوظة.',
+    contactDetails: 'تفاصيل التواصل', socialMedia: 'وسائل التواصل الاجتماعي', rights: 'جميع الحقوق محفوظة.', legal: 'الشروط القانونية',
   },
 } as const;

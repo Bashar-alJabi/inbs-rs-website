@@ -90,6 +90,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         </div>
         <div className="inbs-footer-bottom">
           <span className="inbs-copyright">© INBS Real Estate <span>{t.rights}</span></span>
+          <div><Link href={`/${locale}/legal`}>{t.legal}</Link></div>
         </div>
       </div>
     </footer>

@@ -27,6 +27,8 @@ for (const [locale, dir] of [['en', 'ltr'], ['ar', 'rtl']]) {
   assert.match(html, /class="inbs-footer"/);
   assert.match(html, /class="inbs-footer-grid"/);
   assert.match(html, /class="inbs-footer-watermark"/);
+  assert.match(html, new RegExp(`href="/${locale}/legal"`));
+  assert.match(html, locale === 'ar' ? /الشروط القانونية/ : />Legal<\/a>/);
   assert.match(html, /info@inbsrealestate\.com/);
   assert.match(html, locale === 'ar' ? /حيث تجد الفرص عنوانها/ : /Where possibilities find an address/);
 
